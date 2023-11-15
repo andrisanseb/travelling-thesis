@@ -1,0 +1,19 @@
+----Flyway-----
+flyway -cleanDisabled=false clean
+flyway validate
+flyway migrate
+
+
+----Chatgpt-----
+chat commands:
+-create postgre query that adds data to travel destination table that has name, country, description properties with real data for each capital city of europe
+for each destination add 15 attractions to activities table that has name, description, cost and destination id
+
+-create postgre query that inserts 20 things to do and attractions to see in table named activties with properties name, description and cost for Amsterdam
+
+-add 10 more different rows to table above
+
+
+
+----Code----
+@JsonIgnore: do not return value in json
