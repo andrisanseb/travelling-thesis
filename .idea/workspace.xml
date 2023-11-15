@@ -4,61 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5d9e049f-9796-46a6-8a0a-ca6f1b141876" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/db/migrations/.gitkeep" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/db/migrations/V1_0_0__create_monolithic_tables.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/db/migrations/V2_0_0__populate_tables.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/db/migrations/V3_0_0__populate_main_data.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/notes/commands.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/thesis/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/thesis/config/CorsConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/thesis/controller/ActivityController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/thesis/controller/AirportController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/thesis/controller/AuthController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/thesis/controller/CountryController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/thesis/controller/DestinationController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/thesis/controller/ItineraryController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/thesis/controller/UserController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/thesis/model/Activity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/thesis/model/Airport.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/thesis/model/Country.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/thesis/model/DTO/ActivityDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/thesis/model/DTO/AirportDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/thesis/model/DTO/CountryDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/thesis/model/DTO/DestinationDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/thesis/model/DTO/ItineraryDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/thesis/model/DTO/UserDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/thesis/model/Destination.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/thesis/model/Itinerary.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/thesis/model/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/thesis/repository/ActivityRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/thesis/repository/AirportRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/thesis/repository/CountryRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/thesis/repository/DestinationRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/thesis/repository/ItineraryRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/thesis/repository/UserRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/thesis/request/LoginRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/thesis/request/RegisterRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/thesis/responses/JwtResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/thesis/security/AuthEntryPointJwt.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/thesis/security/JwtUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/thesis/security/SecurityConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/thesis/services/UserDetailsImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/thesis/services/UserDetailsServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-    </list>
+    <list default="true" id="5d9e049f-9796-46a6-8a0a-ca6f1b141876" name="Changes" comment="Base Endpoints and JWT Auth implemented" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -187,7 +133,30 @@
       <option name="presentableId" value="Default" />
       <updated>1697803218157</updated>
     </task>
+    <task id="LOCAL-00001" summary="Base Endpoints and JWT Auth implemented">
+      <created>1700047982504</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1700047982504</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Base Endpoints and JWT Auth implemented" />
+    <option name="LAST_COMMIT_MESSAGE" value="Base Endpoints and JWT Auth implemented" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
