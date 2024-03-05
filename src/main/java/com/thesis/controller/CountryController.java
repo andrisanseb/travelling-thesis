@@ -42,9 +42,9 @@ public class CountryController {
         return this.countryRepository.findById(id).orElseThrow();
     }
 
-    @GetMapping("/{id}/airports")
-    public List<Airport> getAllAirportsOfCountry(@PathVariable("id") Integer id) {
-        return this.countryRepository.getReferenceById(id).getAirports();
-    }
+//    @GetMapping("/{id}/airports")
+//    public List<Airport> getAllAirportsOfCountry(@PathVariable("id") Integer id) {
+//        return this.countryRepository.getReferenceById(id).getAirports();
+//    }
 
 }

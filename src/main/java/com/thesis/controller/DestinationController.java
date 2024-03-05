@@ -66,8 +66,8 @@ public class DestinationController {
         Destination destinationToUpdate = this.destinationRepository.findById(id).orElseThrow( () -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Not Found"));
 
         destinationToUpdate.setName(destination.getName());
-        destinationToUpdate.setNearest_airport_id(destination.getNearest_airport_id());
         destinationToUpdate.setDescription(destination.getDescription());
+        destinationToUpdate.setImg_path(destination.getImg_path());
 
         return new ResponseEntity<Destination>(this.destinationRepository.save(destinationToUpdate), HttpStatus.CREATED);
     }

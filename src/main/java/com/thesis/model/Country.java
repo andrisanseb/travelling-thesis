@@ -24,15 +24,19 @@ public class Country {
     @Column(name = "name", unique = true)
     private String name;
 
+    @Column(name = "img_path")
+    private String img_path;
+
     @OneToMany(mappedBy = "country", cascade = CascadeType.ALL)
     @JsonIgnoreProperties("country")
     @JsonIgnore
-    private List<Airport> airports;
+    private List<Destination> destinations;
 
-//    @OneToMany(mappedBy = "country")
+
+//    @OneToMany(mappedBy = "country", cascade = CascadeType.ALL)
 //    @JsonIgnoreProperties("country")
 //    @JsonIgnore
-//    private List<User> users;
+//    private List<Airport> airports;
 
 
 
@@ -41,10 +45,15 @@ public class Country {
         this.name = name;
     }
 
-    public Country (String name, List<Airport> airports) {
+    public Country (String name, String img_path) {
         this.name = name;
-        this.airports = airports;
+        this.img_path = img_path;
     }
+
+//    public Country (String name, List<Airport> airports) {
+//        this.name = name;
+//        this.airports = airports;
+//    }
 
 
     //Getters and Setters
@@ -64,8 +73,23 @@ public class Country {
         this.name = name;
     }
 
-    public List<Airport> getAirports() { return airports; }
+//    public List<Airport> getAirports() { return airports; }
+//
+//    public void setAirports(List<Airport> airports) { this.airports = airports; }
+//
+    public String getImg_path() {
+        return img_path;
+    }
 
-    public void setAirports(List<Airport> airports) { this.airports = airports; }
+    public void setImg_path(String img_path) {
+        this.img_path = img_path;
+    }
 
+    public List<Destination> getDestinations() {
+        return destinations;
+    }
+
+    public void setDestinations(List<Destination> destinations) {
+        this.destinations = destinations;
+    }
 }

@@ -39,9 +39,6 @@ public class User {
     @Column(name = "last_name")
     private String last_name;
 
-    @Column(name = "nearest_airport_id")
-    private int nearest_airport_id;
-
     @Column(name="created_at")
     @CreationTimestamp
     private LocalDateTime createdAt;
@@ -54,6 +51,16 @@ public class User {
     @JsonIgnore
     private List<Itinerary> itineraries;
 
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    @JsonIgnoreProperties("user")
+    @JsonIgnore
+    private List<RoadTrip> roadTrips;
+
+//    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+//    @JsonIgnoreProperties("user")
+//    @JsonIgnore
+//    private List<FavoriteDestination> favoriteDestinations;
+
 
 //    @OneToMany(mappedBy = "user")
 //    @JsonIgnoreProperties("user")
@@ -63,16 +70,6 @@ public class User {
 
     //Constructors
 
-    public User (String first_name, String last_name, String username, int nearest_airport_id, String email, String password) {
-        this.first_name = first_name;
-        this.last_name = last_name;
-        this.username = username;
-        this.nearest_airport_id = nearest_airport_id;
-        this.email = email;
-        this.password = password;
-    }
-
-    //default country and airport = (GR, ATH)
     public User (String first_name, String last_name, String username, String email, String password) {
         this.first_name = first_name;
         this.last_name = last_name;
@@ -81,7 +78,7 @@ public class User {
         this.password = password;
     }
 
-    public User(String username, String password) {
+    public User (String username, String password) {
         this.username = username;
         this.password = password;
     }
@@ -158,10 +155,21 @@ public class User {
         this.updatedAt = LocalDateTime.now();
     }
 
-    public int getNearest_airport_id() { return nearest_airport_id; }
+    public List<RoadTrip> getRoadTrips() {
+        return roadTrips;
+    }
 
-    public void setNearest_airport_id(int nearest_airport_id) { this.nearest_airport_id = nearest_airport_id; }
+    public void setRoadTrips(List<RoadTrip> roadTrips) {
+        this.roadTrips = roadTrips;
+    }
 
+//    public List<FavoriteDestination> getFavoriteDestinations() {
+//        return favoriteDestinations;
+//    }
+//
+//    public void setFavoriteDestinations(List<FavoriteDestination> favoriteDestinations) {
+//        this.favoriteDestinations = favoriteDestinations;
+//    }
 //    public List<User> getUser_follows() { return user_follows; }
 //    public void setUser_follows(List<User> user_follows) { this.user_follows = user_follows; }
 

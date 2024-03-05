@@ -8,8 +8,6 @@ public class UserDTO {
     private String password;
     private String first_name;
     private String last_name;
-    private int nearest_airport_id;
-
 
     public UserDTO() {}
 
@@ -60,14 +58,6 @@ public class UserDTO {
 
     public void setUsername(String username) {
         this.username = username;
-    }
-
-    public Integer getNearest_airport_id() {
-        return nearest_airport_id;
-    }
-
-    public void setNearest_airport_id(Integer nearest_airport_id) {
-        this.nearest_airport_id = nearest_airport_id;
     }
 
 }

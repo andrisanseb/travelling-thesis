@@ -27,10 +27,13 @@ public class Activity {
     @Column(name = "cost")
     private int cost;
 
+    @Column(name = "duration")
+    private int duration;
+
     @ManyToOne
     @JoinColumn(name = "destination_id", nullable = false)
     @JsonIgnoreProperties("destinations")
-    private Destination destination;    //maybe I only need destination_id, not whole Destination?
+    private Destination destination;
 
 
     //Constructors
@@ -38,6 +41,13 @@ public class Activity {
         this.name = name;
         this.description = description;
         this.cost = cost;
+    }
+
+    public Activity (String name, String description, int cost, int duration) {
+        this.name = name;
+        this.description = description;
+        this.cost = cost;
+        this.duration = duration;
     }
 
     public Activity (String name, String description, int cost, Destination destination) {
@@ -91,5 +101,13 @@ public class Activity {
 
     public void setDestination(Destination destination) {
         this.destination = destination;
+    }
+
+    public int getDuration() {
+        return duration;
+    }
+
+    public void setDuration(int duration) {
+        this.duration = duration;
     }
 }

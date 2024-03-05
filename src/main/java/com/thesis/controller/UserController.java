@@ -74,7 +74,6 @@ public class UserController {
         userToUpdate.setPassword(user.getPassword());
         userToUpdate.setFirst_name(user.getFirst_name());
         userToUpdate.setLast_name(user.getLast_name());
-        userToUpdate.setNearest_airport_id(user.getNearest_airport_id());
         userToUpdate.setUpdatedAt();
         this.userRepository.save(userToUpdate);
 

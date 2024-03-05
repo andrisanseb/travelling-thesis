@@ -1,11 +1,17 @@
 package com.thesis.model.DTO;
 
+import java.awt.*;
+import java.math.BigDecimal;
+
 public class DestinationDTO {
 
     private int id;
     private String name;
-    private Integer nearest_airport_id;
     private String description;
+    private BigDecimal longitude;
+    private BigDecimal latitude;
+
+    private String img_path;
 
 
     public DestinationDTO() {}
@@ -28,20 +34,35 @@ public class DestinationDTO {
         this.name = name;
     }
 
-
-    public Integer getNearest_airport_id() {
-        return nearest_airport_id;
-    }
-
-    public void setNearest_airport_id(Integer nearest_airport_id) {
-        this.nearest_airport_id = nearest_airport_id;
-    }
-
     public String getDescription() {
         return description;
     }
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public String getImg_path() {
+        return img_path;
+    }
+
+    public void setImg_path(String img_path) {
+        this.img_path = img_path;
+    }
+
+    public BigDecimal getLongitude() {
+        return longitude;
+    }
+
+    public void setLongitude(BigDecimal longitude) {
+        this.longitude = longitude;
+    }
+
+    public BigDecimal getLatitude() {
+        return latitude;
+    }
+
+    public void setLatitude(BigDecimal latitude) {
+        this.latitude = latitude;
     }
 }
