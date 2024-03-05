@@ -1,34 +1,17 @@
--- BALKAN EDITION (v1)
+-- Countries
 INSERT INTO countries (name, img_path)
 VALUES
     ('Albania', 'albania.jpg'),
     ('Bosnia and Herzegovina', 'bosnia.jpg'),
     ('Bulgaria', 'bulgaria.jpg'),
     ('Croatia', 'croatia.jpg'),
-    ('Greece', 'greece.jpg');
---    ('Kosovo'),
---    ('Montenegro'),
---    ('North Macedonia'),
---    ('Romania'),
---    ('Serbia'),
---    ('Slovenia');
-
-
---INSERT INTO destinations (name, description, country_id, img_path)
---VALUES
---    -- Albania 1
---    ('Tirana', 'Capital city known for its vibrant culture and historical landmarks.', 1, 'albania/tirana.jpg'),
---    ('Berat', 'City of a thousand windows, known for its well-preserved Ottoman architecture.', 1, 'albania/berat.jpg'),
---    ('Sarandë', 'Coastal town famous for its beaches and proximity to archaeological sites like Butrint.', 1, 'albania/sarande.jpg'),
---    -- Bosnia and Herzegovina 2
---    ('Sarajevo', 'Capital city known for its historical sites and vibrant culture.', 2, 'bosnia/sarajevo.jpg'),
---    -- Bulgaria 3
---    ('Sofia', 'Capital city known for its history, landmarks, and vibrant atmosphere.', 3, 'bulgaria/sofia.jpg'),
---    -- Croatia 4
---    ('Dubrovnik', 'Historic city known for its old town and walls.', 4, 'croatia/dubrovnik.jpg'),
---    -- Greece 5
---    ('Athens', 'Historical capital city known for its ancient landmarks like the Acropolis.', 5, 'greece/athens.jpg');
---
+    ('Greece', 'greece.jpg'),
+    ('Montenegro','montenegro.jpg'),
+    ('Serbia','serbia.jpg');
+--    ('North Macedonia','macedonia.jpg'),
+--    ('Romania','romania.jpg'),
+--    ('Kosovo', 'kosovo.jpg'),
+--    ('Slovenia','slovenia.jpg');
 
 
 INSERT INTO destinations (name, description, country_id, img_path, longitude, latitude)
@@ -43,10 +26,14 @@ VALUES
     ('Sofia', 'Capital city known for its history, landmarks, and vibrant atmosphere.', 3, 'bulgaria/sofia.jpg', 23.3219, 42.6977),
     -- Croatia 4
     ('Dubrovnik', 'Historic city known for its old town and walls.', 4, 'croatia/dubrovnik.jpg', 18.0922, 42.6507),
+    ('Split', 'Coastal city known for its beaches, Diocletian’s Palace, and vibrant nightlife.', 4, 'croatia/split.jpg', 16.4425, 43.5081),
     -- Greece 5
-    ('Athens', 'Historical capital city known for its ancient landmarks like the Acropolis.', 5, 'greece/athens.jpg', 23.7275, 37.9838);
-
-
+    ('Athens', 'Historical capital city known for its ancient landmarks like the Acropolis.', 5, 'greece/athens.jpg', 23.7275, 37.9838),
+    -- Montenegro 6
+    ('Kotor', 'Picturesque coastal town known for its medieval old town and stunning bay views.', 6, 'montenegro/kotor.jpg', 18.7712, 42.4247),
+    ('Budva', 'Coastal town known for its beaches, medieval walled city, and vibrant nightlife.', 6, 'montenegro/budva.jpg', 18.8376, 42.2917),
+    -- Serbia 7
+    ('Belgrade', 'Capital city known for its nightlife, riverside clubs, and historical sites like Belgrade Fortress.', 7, 'serbia/belgrade.jpg', 20.4489, 44.7866);
 
 
 INSERT INTO activities (name, description, cost, duration, destination_id)
