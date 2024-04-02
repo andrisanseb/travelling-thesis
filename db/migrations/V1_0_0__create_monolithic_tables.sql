@@ -19,15 +19,6 @@ img_path text
 );
 
 
--- Airports
-create table if not exists airports (
-id serial primary key,
-name text,
-code text,
-country_id int
-);
-
-
 -- Destinations
 create table if not exists destinations (
 id serial primary key,
@@ -50,55 +41,87 @@ duration int,
 destination_id int
 );
 
---
----- Tags
---create table if not exists tags (
---id serial primary key,
---name text
---);
---
---
----- Tags many2many
---create table if not exists activity_tags (
---id serial primary key,
---tag_id int,
---activity_id int
---);
 
+-- Tags
+create table if not exists tags (
+id serial primary key,
+name text
+);
+
+-- Destination Tags many2many
+create table if not exists destination_tags (
+id serial primary key,
+tag_id int,
+destination_id int
+);
+
+-- Activity Tags many2many
+create table if not exists activity_tags (
+id serial primary key,
+tag_id int,
+activity_id int
+);
 
 -- Road Trip
 create table if not exists road_trips (
 id serial primary key,
 name text,
 description text,
-user_id int,
+user_id int,    --maybe add more users? (group travelling)
 destination_ids_ordered int [],
 activity_ids_list int [],
 created_at timestamp(6),
 updated_at timestamp(6)
 );
 
--- Itineraries/ Travel Plans
-create table if not exists itineraries (
+
+-- Reviews
+CREATE TABLE IF NOT EXISTS reviews(
 id serial primary key,
-name text,
 user_id int,
-total_days int,
-category_id int,
-destination_id int,
-total_cost int DEFAULT (0),
-is_public Boolean DEFAULT TRUE,
-created_at timestamp(6),
-updated_at timestamp(6)
+reviewable_type int,   -- (destination==1, activity==2)
+reviewable_id int,
+stars INT CHECK (review >= 1 AND review <= 10), -- min:1, max:10
+comment text DEFAULT NULL,
+created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
+
+
+
+
+-- Unused Tables (older versions - potential changes)
+
+-- Airports
+--create table if not exists airports (
+--id serial primary key,
+--name text,
+--code text,
+--country_id int
+--);
+
+
+-- Itineraries/ Travel Plans
+--create table if not exists itineraries (
+--id serial primary key,
+--name text,
+--user_id int,
+--total_days int,
+--category_id int,
+--destination_id int,
+--total_cost int DEFAULT (0),
+--is_public Boolean DEFAULT TRUE,
+--created_at timestamp(6),
+--updated_at timestamp(6)
+--);
 
 
 -- Itinerary Activities
-CREATE TABLE IF NOT EXISTS itinerary_activity(
-id serial primary key,
-itinerary_id int,
-activity_id int
-);
+--CREATE TABLE IF NOT EXISTS itinerary_activity(
+--id serial primary key,
+--itinerary_id int,
+--activity_id int
+--);
 
 
 ---- User Favorites
@@ -106,14 +129,4 @@ activity_id int
 --id serial primary key,
 --user_id int,
 --destination_id int
---);
-
-
----- Activity Reviews
---CREATE TABLE IF NOT EXISTS activity_reviews(
---id serial primary key,
---user_id int,
---activity_id int,
---review int, -- min:1, max:5
---comment text DEFAULT NULL
 --);
