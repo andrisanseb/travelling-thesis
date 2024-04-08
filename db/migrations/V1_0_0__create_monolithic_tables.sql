@@ -76,15 +76,15 @@ updated_at timestamp(6)
 
 
 -- Reviews
-CREATE TABLE IF NOT EXISTS reviews(
+create table if not exists reviews(
 id serial primary key,
 user_id int,
 reviewable_type int,   -- (destination==1, activity==2)
 reviewable_id int,
-stars INT CHECK (review >= 1 AND review <= 10), -- min:1, max:10
+stars int CHECK (stars >= 1 AND stars <= 10), -- min:1, max:10
 comment text DEFAULT NULL,
-created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+created_at timestamp(6),
+updated_at timestamp(6)
 );
 
 
@@ -92,41 +92,41 @@ updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 
 -- Unused Tables (older versions - potential changes)
 
--- Airports
---create table if not exists airports (
---id serial primary key,
---name text,
---code text,
---country_id int
---);
+-- Airports (needed because of mvc)
+create table if not exists airports (
+id serial primary key,
+name text,
+code text,
+country_id int
+);
 
 
--- Itineraries/ Travel Plans
---create table if not exists itineraries (
---id serial primary key,
---name text,
---user_id int,
---total_days int,
---category_id int,
---destination_id int,
---total_cost int DEFAULT (0),
---is_public Boolean DEFAULT TRUE,
---created_at timestamp(6),
---updated_at timestamp(6)
---);
+-- Itineraries (needed because of mvc)
+create table if not exists itineraries (
+id serial primary key,
+name text,
+user_id int,
+total_days int,
+category_id int,
+destination_id int,
+total_cost int DEFAULT (0),
+is_public Boolean DEFAULT TRUE,
+created_at timestamp(6),
+updated_at timestamp(6)
+);
 
 
 -- Itinerary Activities
---CREATE TABLE IF NOT EXISTS itinerary_activity(
---id serial primary key,
---itinerary_id int,
---activity_id int
---);
+CREATE TABLE IF NOT EXISTS itinerary_activity(
+id serial primary key,
+itinerary_id int,
+activity_id int
+);
 
 
 ---- User Favorites
---create table if not exists favorite_destinations (
---id serial primary key,
---user_id int,
---destination_id int
---);
+create table if not exists favorite_destinations (
+id serial primary key,
+user_id int,
+destination_id int
+);
