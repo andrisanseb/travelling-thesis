@@ -46,11 +46,6 @@ public class User {
     @UpdateTimestamp
     private LocalDateTime updatedAt;
 
-    @OneToMany(mappedBy = "user")
-    @JsonIgnoreProperties("user")
-    @JsonIgnore
-    private List<Itinerary> itineraries;
-
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     @JsonIgnoreProperties("user")
     @JsonIgnore
@@ -129,14 +124,6 @@ public class User {
 
     public void setLast_name(String last_name) {
         this.last_name = last_name;
-    }
-
-    public List<Itinerary> getItineraries() {
-        return itineraries;
-    }
-
-    public void setItineraries(List<Itinerary> itineraries) {
-        this.itineraries = itineraries;
     }
 
     public LocalDateTime getCreatedAt() {

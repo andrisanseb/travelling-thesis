@@ -88,6 +88,12 @@ updated_at timestamp(6)
 );
 
 
+-- Categories
+create table if not exists categories(
+id serial primary key,
+name text,
+img_path text
+);
 
 
 -- Unused Tables (older versions - potential changes)
@@ -101,30 +107,7 @@ country_id int
 );
 
 
--- Itineraries (needed because of mvc)
-create table if not exists itineraries (
-id serial primary key,
-name text,
-user_id int,
-total_days int,
-category_id int,
-destination_id int,
-total_cost int DEFAULT (0),
-is_public Boolean DEFAULT TRUE,
-created_at timestamp(6),
-updated_at timestamp(6)
-);
-
-
--- Itinerary Activities
-CREATE TABLE IF NOT EXISTS itinerary_activity(
-id serial primary key,
-itinerary_id int,
-activity_id int
-);
-
-
----- User Favorites
+-- User Favorites
 create table if not exists favorite_destinations (
 id serial primary key,
 user_id int,

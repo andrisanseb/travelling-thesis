@@ -17,7 +17,8 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("users/{user_id}/roadTrips")
+//@RequestMapping("users/{user_id}/roadTrips")
+@RequestMapping("roadTrip")
 public class RoadTripController {
 
     private record RoadTripSingleDTO (String status, RoadTripDTO data) {}
@@ -38,11 +39,24 @@ public class RoadTripController {
 
 
     //ENDPOINTS POST
+//    @PostMapping
+//    public ResponseEntity<RoadTripController.RoadTripSingleDTO> createRoadTrip(@RequestBody RoadTrip roadTrip, @PathVariable int user_id) {
+//
+//        RoadTrip roadTripToCreate = roadTrip;
+//        roadTripToCreate.setUser(userRepository.getReferenceById(user_id));
+//
+//        return ResponseEntity
+//                .status(HttpStatus.CREATED)
+//                .body(new RoadTripController.RoadTripSingleDTO("success", modelMapper
+//                        .map(this.roadTripRepository.save(roadTripToCreate), RoadTripDTO.class)
+//                ));
+//    }
+
     @PostMapping
-    public ResponseEntity<RoadTripController.RoadTripSingleDTO> createRoadTrip(@RequestBody RoadTrip roadTrip, @PathVariable int user_id) {
+    public ResponseEntity<RoadTripController.RoadTripSingleDTO> createRoadTrip(@RequestBody RoadTrip roadTrip) {
 
         RoadTrip roadTripToCreate = roadTrip;
-        roadTripToCreate.setUser(userRepository.getReferenceById(user_id));
+//        roadTripToCreate.setUser(userRepository.getReferenceById(user_id));
 
         return ResponseEntity
                 .status(HttpStatus.CREATED)
