@@ -38,29 +38,10 @@ name text,
 description text,
 cost int,
 duration int,
-destination_id int
+destination_id int,
+category text
 );
 
-
--- Tags
-create table if not exists tags (
-id serial primary key,
-name text
-);
-
--- Destination Tags many2many
-create table if not exists destination_tags (
-id serial primary key,
-tag_id int,
-destination_id int
-);
-
--- Activity Tags many2many
-create table if not exists activity_tags (
-id serial primary key,
-tag_id int,
-activity_id int
-);
 
 -- Road Trip
 create table if not exists road_trips (
@@ -85,14 +66,6 @@ stars int CHECK (stars >= 1 AND stars <= 10), -- min:1, max:10
 comment text DEFAULT NULL,
 created_at timestamp(6),
 updated_at timestamp(6)
-);
-
-
--- Categories
-create table if not exists categories(
-id serial primary key,
-name text,
-img_path text
 );
 
 

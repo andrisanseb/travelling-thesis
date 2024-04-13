@@ -4,32 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5d9e049f-9796-46a6-8a0a-ca6f1b141876" name="Changes" comment="Base Endpoints and JWT Auth implemented">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/thesis/controller/RoadTripController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/thesis/model/DTO/RoadTripDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/thesis/model/RoadTrip.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/thesis/repository/RoadTripRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/thesis/v2/controller/PoiController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="5d9e049f-9796-46a6-8a0a-ca6f1b141876" name="Changes" comment="DB changes.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/migrations/.gitkeep" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/db/migrations/V1_0_0__create_monolithic_tables.sql" beforeDir="false" afterPath="$PROJECT_DIR$/db/migrations/V1_0_0__create_monolithic_tables.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/migrations/V2_0_0__populate_tables.sql" beforeDir="false" afterPath="$PROJECT_DIR$/db/migrations/V2_0_0__populate_tables.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/migrations/V3_0_0__populate_main_data.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/thesis/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/thesis/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/thesis/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/thesis/controller/AuthController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/thesis/controller/CountryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/thesis/controller/CountryController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/thesis/controller/DestinationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/thesis/controller/DestinationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/thesis/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/thesis/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/migrations/V2_0_0__populate_main_tables.sql" beforeDir="false" afterPath="$PROJECT_DIR$/db/migrations/V2_0_0__populate_main_tables.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/migrations/V2_0_1__populate_secondary_tables.sql" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/thesis/model/Activity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/thesis/model/Activity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/thesis/model/Country.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/thesis/model/Country.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/thesis/model/DTO/CountryDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/thesis/model/DTO/CountryDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/thesis/model/DTO/DestinationDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/thesis/model/DTO/DestinationDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/thesis/model/DTO/UserDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/thesis/model/DTO/UserDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/thesis/model/Destination.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/thesis/model/Destination.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/thesis/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/thesis/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/thesis/model/DTO/ActivityDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/thesis/model/DTO/ActivityDTO.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,6 +52,19 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="784b7212-79ab-4132-8589-a938790ddb03" />
+        <option name="url" value="https://github.com/andrisanseb/travelling-thesis" />
+      </UrlAndAccount>
+    </option>
   </component>
   <component name="ProjectId" id="2X1iv8hprwyGjuRiBbcHa4psqDq" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -162,9 +156,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main" />
         <item itemvalue="Application.thesis.v2.Main" />
         <item itemvalue="Gradle.travel-thesis [dependencies]" />
-        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -184,15 +178,80 @@
       <option name="project" value="LOCAL" />
       <updated>1700047982504</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="v2: Balkan Initialized. Needs a lot of clean up.">
+      <created>1709664667982</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1709664667983</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Added countries, destinations.">
+      <created>1709668435760</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1709668435761</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Stable version. (Tables uncommented because of Hibernate)">
+      <created>1712595758474</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1712595758474</updated>
+    </task>
+    <task id="LOCAL-00005" summary="DB changes.">
+      <created>1712687856495</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1712687856495</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="master" />
+                </option>
+              </RecentGroup>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="origin/master" />
+                </option>
+              </RecentGroup>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="HEAD" />
+                </option>
+              </RecentGroup>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -200,7 +259,11 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Base Endpoints and JWT Auth implemented" />
-    <option name="LAST_COMMIT_MESSAGE" value="Base Endpoints and JWT Auth implemented" />
+    <MESSAGE value="v2: Balkan Initialized. Needs a lot of clean up." />
+    <MESSAGE value="Added countries, destinations." />
+    <MESSAGE value="Stable version. (Tables uncommented because of Hibernate)" />
+    <MESSAGE value="DB changes." />
+    <option name="LAST_COMMIT_MESSAGE" value="DB changes." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

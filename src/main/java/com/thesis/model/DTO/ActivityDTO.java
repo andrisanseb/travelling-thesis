@@ -6,6 +6,8 @@ public class ActivityDTO {
     private String name;
     private String description;
     private int cost;
+    private int destination_id;
+    private String category;
 
 
     public ActivityDTO() {}
@@ -44,4 +46,7 @@ public class ActivityDTO {
         this.cost = cost;
     }
 
+    public String getCategory() { return category; }
+
+    public void setCategory(String category) { this.category = category; }
 }
