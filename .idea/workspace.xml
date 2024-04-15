@@ -4,13 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5d9e049f-9796-46a6-8a0a-ca6f1b141876" name="Changes" comment="DB changes.">
+    <list default="true" id="5d9e049f-9796-46a6-8a0a-ca6f1b141876" name="Changes" comment="Added category to Activities and changed data.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db/migrations/V1_0_0__create_monolithic_tables.sql" beforeDir="false" afterPath="$PROJECT_DIR$/db/migrations/V1_0_0__create_monolithic_tables.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/migrations/V2_0_0__populate_main_tables.sql" beforeDir="false" afterPath="$PROJECT_DIR$/db/migrations/V2_0_0__populate_main_tables.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/migrations/V2_0_1__populate_secondary_tables.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/thesis/model/Activity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/thesis/model/Activity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/thesis/model/DTO/ActivityDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/thesis/model/DTO/ActivityDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/thesis/controller/RoadTripController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/thesis/controller/RoadTripController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/thesis/model/DTO/RoadTripDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/thesis/model/DTO/RoadTripDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/thesis/model/RoadTrip.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/thesis/model/RoadTrip.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -206,7 +205,14 @@
       <option name="project" value="LOCAL" />
       <updated>1712687856495</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Added category to Activities and changed data.">
+      <created>1713042965688</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1713042965688</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -263,7 +269,8 @@
     <MESSAGE value="Added countries, destinations." />
     <MESSAGE value="Stable version. (Tables uncommented because of Hibernate)" />
     <MESSAGE value="DB changes." />
-    <option name="LAST_COMMIT_MESSAGE" value="DB changes." />
+    <MESSAGE value="Added category to Activities and changed data." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added category to Activities and changed data." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

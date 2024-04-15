@@ -29,11 +29,17 @@ public class RoadTrip {
     @Column(name = "description")
     private String description;
 
-    @Column(name = "destination_ids_ordered")   //array in postgresql
-    private List<Integer> destination_ids_ordered;
+//    @Column(name = "destination_ids_ordered")   //array in postgresql
+//    private List<Integer> destination_ids_ordered;
+//
+//    @Column(name = "activity_ids_list")
+//    private List<Integer> activity_ids_list;
 
-    @Column(name = "activity_ids_list")
-    private List<Integer> activity_ids_list;
+    @Column(name="route")
+    private String route;
+
+    @Column(name="days")
+    private String days;
 
     @Column(name="created_at")
     @CreationTimestamp
@@ -65,13 +71,21 @@ public class RoadTrip {
         this.user = user;
     }
 
-    public RoadTrip(String name, String description, List<Integer> destination_ids_ordered, List<Integer> activity_ids_list, User user) {
+    public RoadTrip(String name, String description, User user, String route, String days) {
         this.name = name;
         this.description = description;
-        this.destination_ids_ordered = destination_ids_ordered;
-        this.activity_ids_list = activity_ids_list;
         this.user = user;
+        this.route = route;
+        this.days = days;
     }
+
+//    public RoadTrip(String name, String description, List<Integer> destination_ids_ordered, List<Integer> activity_ids_list, User user) {
+//        this.name = name;
+//        this.description = description;
+//        this.destination_ids_ordered = destination_ids_ordered;
+//        this.activity_ids_list = activity_ids_list;
+//        this.user = user;
+//    }
 
     //Getter and Setters
 
@@ -98,22 +112,22 @@ public class RoadTrip {
     public void setDescription(String description) {
         this.description = description;
     }
-
-    public List<Integer> getDestination_ids_ordered() {
-        return destination_ids_ordered;
-    }
-
-    public void setDestination_ids_ordered(List<Integer> destination_ids_ordered) {
-        this.destination_ids_ordered = destination_ids_ordered;
-    }
-
-    public List<Integer> getActivity_ids_list() {
-        return activity_ids_list;
-    }
-
-    public void setActivity_ids_list(List<Integer> activity_ids_list) {
-        this.activity_ids_list = activity_ids_list;
-    }
+//
+//    public List<Integer> getDestination_ids_ordered() {
+//        return destination_ids_ordered;
+//    }
+//
+//    public void setDestination_ids_ordered(List<Integer> destination_ids_ordered) {
+//        this.destination_ids_ordered = destination_ids_ordered;
+//    }
+//
+//    public List<Integer> getActivity_ids_list() {
+//        return activity_ids_list;
+//    }
+//
+//    public void setActivity_ids_list(List<Integer> activity_ids_list) {
+//        this.activity_ids_list = activity_ids_list;
+//    }
 
     public LocalDateTime getCreatedAt() {
         return createdAt;
@@ -138,4 +152,13 @@ public class RoadTrip {
     public void setUser(User user) {
         this.user = user;
     }
+
+    public String getRoute() { return route; }
+
+    public void setRoute(String route) { this.route = route; }
+
+    public String getDays() { return days; }
+
+    public void setDays(String days) { this.days = days; }
+
 }

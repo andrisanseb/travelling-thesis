@@ -15,6 +15,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @RestController
 //@RequestMapping("users/{user_id}/roadTrips")
@@ -37,7 +38,6 @@ public class RoadTripController {
     private ModelMapper modelMapper;
 
 
-
     //ENDPOINTS POST
 //    @PostMapping
 //    public ResponseEntity<RoadTripController.RoadTripSingleDTO> createRoadTrip(@RequestBody RoadTrip roadTrip, @PathVariable int user_id) {
@@ -52,11 +52,24 @@ public class RoadTripController {
 //                ));
 //    }
 
+//    @PostMapping
+//    public ResponseEntity<RoadTripController.RoadTripSingleDTO> createRoadTrip(@RequestBody RoadTrip roadTrip) {
+//
+//        RoadTrip roadTripToCreate = roadTrip;
+////        roadTripToCreate.setUser(userRepository.getReferenceById(user_id));
+//
+//        return ResponseEntity
+//                .status(HttpStatus.CREATED)
+//                .body(new RoadTripController.RoadTripSingleDTO("success", modelMapper
+//                        .map(this.roadTripRepository.save(roadTripToCreate), RoadTripDTO.class)
+//                ));
+//    }
+
+
     @PostMapping
     public ResponseEntity<RoadTripController.RoadTripSingleDTO> createRoadTrip(@RequestBody RoadTrip roadTrip) {
 
         RoadTrip roadTripToCreate = roadTrip;
-//        roadTripToCreate.setUser(userRepository.getReferenceById(user_id));
 
         return ResponseEntity
                 .status(HttpStatus.CREATED)
@@ -64,4 +77,17 @@ public class RoadTripController {
                         .map(this.roadTripRepository.save(roadTripToCreate), RoadTripDTO.class)
                 ));
     }
+
+
+    @GetMapping
+    public ResponseEntity<RoadTripController.RoadTripListDTO> getAllRoadTrips() {
+        return ResponseEntity
+                .ok(new RoadTripController.RoadTripListDTO("success", this.roadTripRepository.findAll().stream()
+                        .map(x -> modelMapper
+                                .map(x, RoadTripDTO.class))
+                        .collect(Collectors.toList())
+                ));
+    }
+
+    // TODO: get by id, getAll of user_id, update, delete enpoints
 }
