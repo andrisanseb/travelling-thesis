@@ -51,7 +51,7 @@ public class RoadTrip {
 
     @ManyToOne
     @JoinColumn(name = "user_id", nullable = false)
-    @JsonIgnoreProperties("users")
+//    @JsonIgnoreProperties("users")
     private User user;
 
 

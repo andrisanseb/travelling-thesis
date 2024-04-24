@@ -11,7 +11,6 @@ public class RoadTripDTO {
     private String route;
     private String days;
 
-
     public int getId() {
         return id;
     }

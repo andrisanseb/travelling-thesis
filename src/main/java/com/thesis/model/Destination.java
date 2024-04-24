@@ -29,7 +29,6 @@ public class Destination {
     @Column(name = "description")
     private String description;
 
-
     @Column(name = "img_path")
     private String img_path;
 
