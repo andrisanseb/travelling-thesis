@@ -4,12 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5d9e049f-9796-46a6-8a0a-ca6f1b141876" name="Changes" comment="Added category to Activities and changed data.">
+    <list default="true" id="5d9e049f-9796-46a6-8a0a-ca6f1b141876" name="Changes" comment="RoadTrip MVC updated. POST, GET endpoints done.">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/migrations/V1_0_0__create_monolithic_tables.sql" beforeDir="false" afterPath="$PROJECT_DIR$/db/migrations/V1_0_0__create_monolithic_tables.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/thesis/controller/RoadTripController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/thesis/controller/RoadTripController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/thesis/model/DTO/RoadTripDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/thesis/model/DTO/RoadTripDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/thesis/model/RoadTrip.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/thesis/model/RoadTrip.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/commands.txt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -212,7 +210,14 @@
       <option name="project" value="LOCAL" />
       <updated>1713042965688</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="RoadTrip MVC updated. POST, GET endpoints done.">
+      <created>1713194430027</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1713194430027</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -270,7 +275,8 @@
     <MESSAGE value="Stable version. (Tables uncommented because of Hibernate)" />
     <MESSAGE value="DB changes." />
     <MESSAGE value="Added category to Activities and changed data." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added category to Activities and changed data." />
+    <MESSAGE value="RoadTrip MVC updated. POST, GET endpoints done." />
+    <option name="LAST_COMMIT_MESSAGE" value="RoadTrip MVC updated. POST, GET endpoints done." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
