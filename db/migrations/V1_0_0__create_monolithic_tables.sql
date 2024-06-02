@@ -43,17 +43,16 @@ category text
 );
 
 
----- Road Trip
---create table if not exists road_trips (
---id serial primary key,
---name text,
---description text,
---user_id int,    --maybe add more users? (group travelling)
---destination_ids_ordered int [],
---activity_ids_list int [],
---created_at timestamp(6),
---updated_at timestamp(6)
---);
+-- Favorite Activities
+create table if not exists favorite_activities (
+id serial primary key,
+user_id int,
+activity_id int,
+favorited_at timestamp(6) DEFAULT CURRENT_TIMESTAMP,
+FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,
+FOREIGN KEY (activity_id) REFERENCES activities(id) ON DELETE CASCADE
+);
+
 
 create table if not exists road_trips (
 id serial primary key,

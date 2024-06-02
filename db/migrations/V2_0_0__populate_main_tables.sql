@@ -1,4 +1,5 @@
 -- TODO: maybe img_path is not needed, just check it in frontend
+
 -- Countries
 INSERT INTO countries (name, img_path)
 VALUES

@@ -7,5 +7,8 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.List;
 
 public interface ActivityRepository extends JpaRepository<Activity, Integer> {
-    List<Activity> findByDestination(Destination destination);
+    // List<Activity> findByDestination(Destination destination);
+    List<Activity> findByDestinationId(Integer destinationId);
+    List<Activity> findByIdIn(List<Integer> activityIds);
+
 }
