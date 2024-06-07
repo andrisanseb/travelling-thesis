@@ -46,10 +46,10 @@ public class User {
     @UpdateTimestamp
     private LocalDateTime updatedAt;
 
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
-    @JsonIgnoreProperties("user")
-    @JsonIgnore
-    private List<RoadTrip> roadTrips;
+//    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+//    @JsonIgnoreProperties("user")
+//    @JsonIgnore
+//    private List<RoadTrip> roadTrips;
 
 //    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
 //    @JsonIgnoreProperties("user")
@@ -142,13 +142,13 @@ public class User {
         this.updatedAt = LocalDateTime.now();
     }
 
-    public List<RoadTrip> getRoadTrips() {
-        return roadTrips;
-    }
-
-    public void setRoadTrips(List<RoadTrip> roadTrips) {
-        this.roadTrips = roadTrips;
-    }
+//    public List<RoadTrip> getRoadTrips() {
+//        return roadTrips;
+//    }
+//
+//    public void setRoadTrips(List<RoadTrip> roadTrips) {
+//        this.roadTrips = roadTrips;
+//    }
 
 //    public List<FavoriteDestination> getFavoriteDestinations() {
 //        return favoriteDestinations;

@@ -1,15 +1,32 @@
 package com.thesis.model.DTO;
 
-import java.util.List;
-
 public class RoadTripDTO {
     private int id;
     private String name;
     private String description;
-//    private List<Integer> destination_ids_ordered;
-//    private List<Integer> activity_ids_list;
+    private Integer userId;
     private String route;
     private String days;
+
+
+    // Constructors
+    public RoadTripDTO() {}
+
+    public RoadTripDTO(String name, String description, Integer userId) {
+        this.name = name;
+        this.description = description;
+        this.userId = userId;
+    }
+
+    public RoadTripDTO(String name, String description, String route, String days, Integer userId) {
+        this.name = name;
+        this.description = description;
+        this.route = route;
+        this.days = days;
+        this.userId = userId;
+    }
+
+    // Getters and Setters
 
     public int getId() {
         return id;
@@ -49,5 +66,13 @@ public class RoadTripDTO {
 
     public void setDays(String days) {
         this.days = days;
+    }
+
+    public Integer getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Integer userId) {
+        this.userId = userId;
     }
 }

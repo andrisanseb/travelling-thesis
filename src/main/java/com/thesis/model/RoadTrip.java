@@ -9,7 +9,6 @@ import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import java.time.LocalDateTime;
-import java.util.List;
 
 @Entity
 @Table(name = "roadTrips")
@@ -29,12 +28,6 @@ public class RoadTrip {
     @Column(name = "description")
     private String description;
 
-//    @Column(name = "destination_ids_ordered")   //array in postgresql
-//    private List<Integer> destination_ids_ordered;
-//
-//    @Column(name = "activity_ids_list")
-//    private List<Integer> activity_ids_list;
-
     @Column(name="route")
     private String route;
 
@@ -49,10 +42,13 @@ public class RoadTrip {
     @UpdateTimestamp
     private LocalDateTime updatedAt;
 
-    @ManyToOne
-    @JoinColumn(name = "user_id", nullable = false)
-//    @JsonIgnoreProperties("users")
-    private User user;
+//    @ManyToOne
+//    @JoinColumn(name = "user_id", nullable = false)
+////    @JsonIgnoreProperties("users")
+//    private User user;
+
+    @Column(name = "user_id", nullable = false)
+    private Integer userId;
 
 
     //Constructors
@@ -60,32 +56,24 @@ public class RoadTrip {
         this.id = id;
     }
 
-    public RoadTrip(String name, User user) {
+    public RoadTrip(String name, Integer userId) {
         this.name = name;
-        this.user = user;
+        this.userId = userId;
     }
 
-    public RoadTrip(String name, String description, User user) {
+    public RoadTrip(String name, String description, Integer userId) {
         this.name = name;
         this.description = description;
-        this.user = user;
+        this.userId = userId;
     }
 
-    public RoadTrip(String name, String description, User user, String route, String days) {
+    public RoadTrip(String name, String description, Integer userId, String route, String days) {
         this.name = name;
         this.description = description;
-        this.user = user;
+        this.userId = userId;
         this.route = route;
         this.days = days;
     }
-
-//    public RoadTrip(String name, String description, List<Integer> destination_ids_ordered, List<Integer> activity_ids_list, User user) {
-//        this.name = name;
-//        this.description = description;
-//        this.destination_ids_ordered = destination_ids_ordered;
-//        this.activity_ids_list = activity_ids_list;
-//        this.user = user;
-//    }
 
     //Getter and Setters
 
@@ -112,22 +100,6 @@ public class RoadTrip {
     public void setDescription(String description) {
         this.description = description;
     }
-//
-//    public List<Integer> getDestination_ids_ordered() {
-//        return destination_ids_ordered;
-//    }
-//
-//    public void setDestination_ids_ordered(List<Integer> destination_ids_ordered) {
-//        this.destination_ids_ordered = destination_ids_ordered;
-//    }
-//
-//    public List<Integer> getActivity_ids_list() {
-//        return activity_ids_list;
-//    }
-//
-//    public void setActivity_ids_list(List<Integer> activity_ids_list) {
-//        this.activity_ids_list = activity_ids_list;
-//    }
 
     public LocalDateTime getCreatedAt() {
         return createdAt;
@@ -145,14 +117,6 @@ public class RoadTrip {
         this.updatedAt = updatedAt;
     }
 
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
-    }
-
     public String getRoute() { return route; }
 
     public void setRoute(String route) { this.route = route; }
@@ -161,4 +125,11 @@ public class RoadTrip {
 
     public void setDays(String days) { this.days = days; }
 
+    public Integer getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Integer userId) {
+        this.userId = userId;
+    }
 }

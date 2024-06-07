@@ -37,14 +37,19 @@ public class RoadTripController {
     private ModelMapper modelMapper;
 
     @PostMapping
-    public ResponseEntity<RoadTripSingleDTO> createRoadTrip(@RequestBody RoadTrip roadTrip) {
+    public ResponseEntity<RoadTripSingleDTO> createRoadTrip(@RequestBody RoadTripDTO roadTripDTO) {
+        // Map the RoadTripDTO to RoadTrip entity
+        RoadTrip roadTrip = modelMapper.map(roadTripDTO, RoadTrip.class);
 
-        RoadTrip roadTripToCreate = roadTrip;
+        // Save the RoadTrip entity to the repository
+        RoadTrip savedRoadTrip = roadTripRepository.save(roadTrip);
+
+        // Map the saved RoadTrip entity back to RoadTripDTO
+        RoadTripDTO savedRoadTripDTO = modelMapper.map(savedRoadTrip, RoadTripDTO.class);
 
         return ResponseEntity
-                .ok(new RoadTripSingleDTO("success", modelMapper
-                        .map(this.roadTripRepository.save(roadTripToCreate), RoadTripDTO.class)
-  ));
+                .status(HttpStatus.CREATED)
+                .body(new RoadTripSingleDTO("success", savedRoadTripDTO));
     }
 
 
@@ -58,5 +63,15 @@ public class RoadTripController {
                 ));
     }
 
-    // TODO: get by id, getAll of user_id, update, delete enpoints
+    // TODO: get by id, getAll of user_id, update, delete endpoints
+
+    @GetMapping("/{userId}")
+    public ResponseEntity<RoadTripListDTO> getAllRoadTripsOfUser(@PathVariable Integer userId) {
+        return ResponseEntity
+                .ok(new RoadTripListDTO("success", this.roadTripRepository.getAllByUserId(userId).stream()
+                        .map(x -> modelMapper
+                                .map(x, RoadTripDTO.class))
+                        .collect(Collectors.toList())
+                ));
+    }
 }

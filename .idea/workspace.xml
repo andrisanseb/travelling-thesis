@@ -4,15 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5d9e049f-9796-46a6-8a0a-ca6f1b141876" name="Changes" comment="Deleted unused file">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/thesis/controller/FavoriteActivityController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/thesis/model/DTO/FavoriteActivityDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/thesis/model/FavoriteActivity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/thesis/repository/FavoriteActivityRepository.java" afterDir="false" />
+    <list default="true" id="5d9e049f-9796-46a6-8a0a-ca6f1b141876" name="Changes" comment="MVC + Endpoints: favoriteActivities">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/migrations/V1_0_0__create_monolithic_tables.sql" beforeDir="false" afterPath="$PROJECT_DIR$/db/migrations/V1_0_0__create_monolithic_tables.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/migrations/V2_0_0__populate_main_tables.sql" beforeDir="false" afterPath="$PROJECT_DIR$/db/migrations/V2_0_0__populate_main_tables.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/thesis/repository/ActivityRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/thesis/repository/ActivityRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/thesis/controller/RoadTripController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/thesis/controller/RoadTripController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/thesis/model/DTO/RoadTripDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/thesis/model/DTO/RoadTripDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/thesis/model/RoadTrip.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/thesis/model/RoadTrip.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/thesis/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/thesis/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/thesis/repository/RoadTripRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/thesis/repository/RoadTripRepository.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -229,7 +227,14 @@
       <option name="project" value="LOCAL" />
       <updated>1715174659057</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="MVC + Endpoints: favoriteActivities">
+      <created>1717332376495</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1717332376495</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -289,7 +294,8 @@
     <MESSAGE value="Added category to Activities and changed data." />
     <MESSAGE value="RoadTrip MVC updated. POST, GET endpoints done." />
     <MESSAGE value="Deleted unused file" />
-    <option name="LAST_COMMIT_MESSAGE" value="Deleted unused file" />
+    <MESSAGE value="MVC + Endpoints: favoriteActivities" />
+    <option name="LAST_COMMIT_MESSAGE" value="MVC + Endpoints: favoriteActivities" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
