@@ -46,3 +46,4 @@ src/main/resources/application.yml
 !**/flyway.conf
 report.html
 report.json
+notes/commands.txt
