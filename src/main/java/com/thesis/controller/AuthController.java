@@ -73,8 +73,6 @@ public class AuthController {
         user.setEmail(registrationRequest.getEmail());
         user.setPassword(hashedPassword);
         user.setEmail(registrationRequest.getEmail());
-        user.setFirst_name(registrationRequest.getFirst_name());
-        user.setLast_name(registrationRequest.getLast_name());
 //        user.setNearest_airport_id(registrationRequest.getNearest_airport_id());
 
         // Save the user to the database
@@ -87,10 +85,6 @@ public class AuthController {
         String jwt = jwtUtils.generateJwtToken(authentication);
 
         User registeredUser = userRepository.findByUsername(user.getUsername());
-
-//        return ResponseEntity.ok("Registration successful");
-//        System.out.println(registeredUser.getId());
-//        System.out.println(registeredUser.getEmail());
 
         return ResponseEntity
                 .ok(new JwtResponse(jwt, registeredUser.getId(), registeredUser.getUsername(), registeredUser.getEmail()));

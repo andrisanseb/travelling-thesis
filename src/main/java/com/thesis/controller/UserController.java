@@ -26,7 +26,6 @@ public class UserController {
     @Autowired
     private ModelMapper modelMapper;
 
-
     //ENDPOINTS
 
     //POST
@@ -72,8 +71,6 @@ public class UserController {
         userToUpdate.setUsername(user.getUsername());
         userToUpdate.setEmail(user.getEmail());
         userToUpdate.setPassword(user.getPassword());
-        userToUpdate.setFirst_name(user.getFirst_name());
-        userToUpdate.setLast_name(user.getLast_name());
         userToUpdate.setUpdatedAt();
         this.userRepository.save(userToUpdate);
 

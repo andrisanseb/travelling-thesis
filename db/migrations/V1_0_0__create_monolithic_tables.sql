@@ -4,8 +4,6 @@ id serial primary key,
 username text,
 email text,
 password text,
-first_name text,
-last_name text,
 created_at timestamp(6),
 updated_at timestamp(6)
 );
@@ -58,7 +56,7 @@ create table if not exists road_trips (
 id serial primary key,
 name text,
 description text,
-user_id int,    --maybe add more users? (group travelling)
+user_id int,
 route text,     -- JSON with route data
 days text,      -- JSON includes actIds by day
 created_at timestamp(6),
