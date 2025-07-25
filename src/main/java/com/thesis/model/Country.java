@@ -32,14 +32,7 @@ public class Country {
     @JsonIgnore
     private List<Destination> destinations;
 
-
-//    @OneToMany(mappedBy = "country", cascade = CascadeType.ALL)
-//    @JsonIgnoreProperties("country")
-//    @JsonIgnore
-//    private List<Airport> airports;
-
-
-
+    // TODO: use @Builder for custom constructors
     //Constructors
     public Country (String name) {
         this.name = name;
@@ -48,48 +41,5 @@ public class Country {
     public Country (String name, String img_path) {
         this.name = name;
         this.img_path = img_path;
-    }
-
-//    public Country (String name, List<Airport> airports) {
-//        this.name = name;
-//        this.airports = airports;
-//    }
-
-
-    //Getters and Setters
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-//    public List<Airport> getAirports() { return airports; }
-//
-//    public void setAirports(List<Airport> airports) { this.airports = airports; }
-//
-    public String getImg_path() {
-        return img_path;
-    }
-
-    public void setImg_path(String img_path) {
-        this.img_path = img_path;
-    }
-
-    public List<Destination> getDestinations() {
-        return destinations;
-    }
-
-    public void setDestinations(List<Destination> destinations) {
-        this.destinations = destinations;
     }
 }

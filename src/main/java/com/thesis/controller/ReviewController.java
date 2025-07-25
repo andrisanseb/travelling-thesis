@@ -1,7 +1,5 @@
 package com.thesis.controller;
 
-
-
 import com.thesis.model.DTO.DestinationDTO;
 import com.thesis.model.DTO.ReviewDTO;
 import com.thesis.model.Destination;

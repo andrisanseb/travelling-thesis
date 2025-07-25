@@ -73,7 +73,6 @@ public class AuthController {
         user.setEmail(registrationRequest.getEmail());
         user.setPassword(hashedPassword);
         user.setEmail(registrationRequest.getEmail());
-//        user.setNearest_airport_id(registrationRequest.getNearest_airport_id());
 
         // Save the user to the database
         userRepository.save(user);

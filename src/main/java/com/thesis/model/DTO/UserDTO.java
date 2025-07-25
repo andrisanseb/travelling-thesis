@@ -1,6 +1,5 @@
 package com.thesis.model.DTO;
 
-
 import lombok.Data;
 import lombok.NoArgsConstructor;
 

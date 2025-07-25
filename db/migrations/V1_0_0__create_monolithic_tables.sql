@@ -77,18 +77,7 @@ updated_at timestamp(6)
 );
 
 
--- Unused Tables (older versions - potential changes)
-
--- Airports (needed because of mvc)
-create table if not exists airports (
-id serial primary key,
-name text,
-code text,
-country_id int
-);
-
-
--- User Favorites
+-- User Favorites (TODO: may be removed)
 create table if not exists favorite_destinations (
 id serial primary key,
 user_id int,

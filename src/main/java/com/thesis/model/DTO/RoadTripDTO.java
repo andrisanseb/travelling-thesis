@@ -1,5 +1,10 @@
 package com.thesis.model.DTO;
 
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@NoArgsConstructor
 public class RoadTripDTO {
     private int id;
     private String name;
@@ -7,10 +12,6 @@ public class RoadTripDTO {
     private Integer userId;
     private String route;
     private String days;
-
-
-    // Constructors
-    public RoadTripDTO() {}
 
     public RoadTripDTO(String name, String description, Integer userId) {
         this.name = name;
@@ -23,56 +24,6 @@ public class RoadTripDTO {
         this.description = description;
         this.route = route;
         this.days = days;
-        this.userId = userId;
-    }
-
-    // Getters and Setters
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public String getRoute() {
-        return route;
-    }
-
-    public void setRoute(String route) {
-        this.route = route;
-    }
-
-    public String getDays() {
-        return days;
-    }
-
-    public void setDays(String days) {
-        this.days = days;
-    }
-
-    public Integer getUserId() {
-        return userId;
-    }
-
-    public void setUserId(Integer userId) {
         this.userId = userId;
     }
 }

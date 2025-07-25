@@ -7,7 +7,4 @@ import java.util.List;
 
 public interface ReviewRepository extends JpaRepository<Review, Integer> {
     Review findById(int id);
-
-    // not working:
-//    List<Review> findByReviewable_Id(int reviewable_id);
 }

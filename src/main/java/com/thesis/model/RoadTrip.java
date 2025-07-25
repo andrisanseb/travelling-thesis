@@ -50,7 +50,7 @@ public class RoadTrip {
     @Column(name = "user_id", nullable = false)
     private Integer userId;
 
-
+    // TODO: use @Builder for custom constructors
     //Constructors
     public RoadTrip(Integer id) {
         this.id = id;
@@ -73,63 +73,5 @@ public class RoadTrip {
         this.userId = userId;
         this.route = route;
         this.days = days;
-    }
-
-    //Getter and Setters
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public LocalDateTime getCreatedAt() {
-        return createdAt;
-    }
-
-    public void setCreatedAt(LocalDateTime createdAt) {
-        this.createdAt = createdAt;
-    }
-
-    public LocalDateTime getUpdatedAt() {
-        return updatedAt;
-    }
-
-    public void setUpdatedAt(LocalDateTime updatedAt) {
-        this.updatedAt = updatedAt;
-    }
-
-    public String getRoute() { return route; }
-
-    public void setRoute(String route) { this.route = route; }
-
-    public String getDays() { return days; }
-
-    public void setDays(String days) { this.days = days; }
-
-    public Integer getUserId() {
-        return userId;
-    }
-
-    public void setUserId(Integer userId) {
-        this.userId = userId;
     }
 }

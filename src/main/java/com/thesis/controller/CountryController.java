@@ -1,9 +1,7 @@
 package com.thesis.controller;
 
-import com.thesis.model.Airport;
 import com.thesis.model.Country;
 import com.thesis.model.DTO.CountryDTO;
-import com.thesis.repository.AirportRepository;
 import com.thesis.repository.CountryRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,9 +23,6 @@ public class CountryController {
     CountryRepository countryRepository;
 
     @Autowired
-    AirportRepository airportRepository;
-
-    @Autowired
     private ModelMapper modelMapper;
 
 
@@ -41,10 +36,5 @@ public class CountryController {
     public Country getCountryById(@PathVariable("id") Integer id) {
         return this.countryRepository.findById(id).orElseThrow();
     }
-
-//    @GetMapping("/{id}/airports")
-//    public List<Airport> getAllAirportsOfCountry(@PathVariable("id") Integer id) {
-//        return this.countryRepository.getReferenceById(id).getAirports();
-//    }
 
 }

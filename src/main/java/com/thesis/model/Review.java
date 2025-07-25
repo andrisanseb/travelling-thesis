@@ -45,7 +45,6 @@ public class Review {
     private LocalDateTime updatedAt;
 
     // Constructors
-
     public Review(Integer user_id, Integer reviewable_type, Integer reviewable_id, Integer stars, String comment) {
         this.user_id = user_id;
         this.reviewable_type = reviewable_type;
@@ -59,70 +58,5 @@ public class Review {
         this.reviewable_type = reviewable_type;
         this.reviewable_id = reviewable_id;
         this.stars = stars;
-    }
-
-    // Getters, Setters
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public Integer getUser_id() {
-        return user_id;
-    }
-
-    public void setUser_id(Integer user_id) {
-        this.user_id = user_id;
-    }
-
-    public Integer getReviewable_type() {
-        return reviewable_type;
-    }
-
-    public void setReviewable_type(Integer reviewable_type) {
-        this.reviewable_type = reviewable_type;
-    }
-
-    public Integer getReviewable_id() {
-        return reviewable_id;
-    }
-
-    public void setReviewable_id(Integer reviewable_id) {
-        this.reviewable_id = reviewable_id;
-    }
-
-    public Integer getStars() {
-        return stars;
-    }
-
-    public void setStars(Integer stars) {
-        this.stars = stars;
-    }
-
-    public String getComment() {
-        return comment;
-    }
-
-    public void setComment(String comment) {
-        this.comment = comment;
-    }
-
-    public LocalDateTime getCreatedAt() {
-        return createdAt;
-    }
-
-    public void setCreatedAt(LocalDateTime createdAt) {
-        this.createdAt = createdAt;
-    }
-
-    public LocalDateTime getUpdatedAt() {
-        return updatedAt;
-    }
-
-    public void setUpdatedAt(LocalDateTime updatedAt) {
-        this.updatedAt = updatedAt;
     }
 }

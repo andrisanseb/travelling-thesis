@@ -49,6 +49,7 @@ public class Destination {
     private List<Activity> activities;
 
 
+    // TODO: use @Builder for custom constructors
     //Constructors
     public Destination (String name, String description) {
         this.name = name;
@@ -83,75 +84,8 @@ public class Destination {
         this.activities = activities;
     }
 
-
     public Destination(int id) {
         this.id = id;
     }
 
-
-    //Getters and Setters
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public List<Activity> getActivities() {
-        return activities;
-    }
-
-    public void setActivities(List<Activity> activities) {
-        this.activities = activities;
-    }
-
-    public String getImg_path() {
-        return img_path;
-    }
-
-    public void setImg_path(String img_path) {
-        this.img_path = img_path;
-    }
-
-    public Country getCountry() {
-        return country;
-    }
-
-    public void setCountry(Country country) {
-        this.country = country;
-    }
-
-
-    public BigDecimal getLongitude() {
-        return longitude;
-    }
-
-    public void setLongitude(BigDecimal longitude) {
-        this.longitude = longitude;
-    }
-
-    public BigDecimal getLatitude() {
-        return latitude;
-    }
-
-    public void setLatitude(BigDecimal latitude) {
-        this.latitude = latitude;
-    }
 }

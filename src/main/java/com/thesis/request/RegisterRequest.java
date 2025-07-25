@@ -7,7 +7,6 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 public class RegisterRequest {
-
     @NotBlank
     @Size(min = 3, max = 20)
     private String username;
@@ -19,7 +18,4 @@ public class RegisterRequest {
 
     @NotBlank
     private String password;
-
-    @Min(1)
-    private Integer nearestAirportId;   // TODO: will be removed
 }
