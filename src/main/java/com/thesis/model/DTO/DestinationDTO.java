@@ -14,4 +14,5 @@ public class DestinationDTO {
     private BigDecimal longitude;
     private BigDecimal latitude;
     private String img_path;
+    private Integer countryId;
 }

@@ -10,6 +10,6 @@ public class ActivityDTO {
     private String name;
     private String description;
     private int cost;
-    private int destination_id;
+    private Integer destination_id;
     private String category;
 }

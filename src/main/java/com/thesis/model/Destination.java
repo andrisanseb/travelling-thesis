@@ -4,7 +4,6 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import java.math.BigDecimal;
 
 @Entity
@@ -28,10 +27,8 @@ public class Destination {
     @Column(name = "img_path")
     private String img_path;
 
-    @ManyToOne
-    @JoinColumn(name = "country_id", nullable = false)
-    @JsonIgnoreProperties("countries")
-    private Country country;
+    @Column(name = "country_id")
+    private Integer countryId;
 
     @Column
     private BigDecimal longitude;
@@ -51,17 +48,17 @@ public class Destination {
         this.img_path = img_path;
     }
 
-    public Destination(String name, String description, Country country, String img_path) {
+    public Destination(String name, String description, Integer countryId, String img_path) {
         this.name = name;
         this.description = description;
-        this.country = country;
+        this.countryId = countryId;
         this.img_path = img_path;
     }
 
-    public Destination(String name, String description, Country country, String img_path, BigDecimal longitude, BigDecimal latitude) {
+    public Destination(String name, String description, Integer countryId, String img_path, BigDecimal longitude, BigDecimal latitude) {
         this.name = name;
         this.description = description;
-        this.country = country;
+        this.countryId = countryId;
         this.img_path = img_path;
         this.longitude = longitude;
         this.latitude = latitude;

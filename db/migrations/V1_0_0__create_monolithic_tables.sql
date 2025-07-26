@@ -22,7 +22,8 @@ description text,
 country_id int,
 img_path text,
 longitude DECIMAL(9,6),
-latitude DECIMAL(8,6)
+latitude DECIMAL(8,6),
+FOREIGN KEY (country_id) REFERENCES countries(id) ON DELETE CASCADE
 );
 
 
@@ -33,7 +34,8 @@ description text,
 cost int,
 duration int,
 destination_id int,
-category text
+category text,
+FOREIGN KEY (destination_id) REFERENCES destinations(id) ON DELETE CASCADE
 );
 
 
@@ -54,5 +56,6 @@ user_id int,    -- TODO: use FOREIGN KEY and CASCADE like in favorite_activities
 route text,     -- JSON with route data
 days text,      -- JSON includes actIds by day
 created_at timestamp(6),
-updated_at timestamp(6)
+updated_at timestamp(6),
+FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
 );
