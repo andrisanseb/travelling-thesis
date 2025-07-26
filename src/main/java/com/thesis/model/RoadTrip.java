@@ -25,9 +25,6 @@ public class RoadTrip {
     @Column(name = "name")
     private String name;
 
-    @Column(name = "description")
-    private String description;
-
     @Column(name="route")
     private String route;
 
@@ -61,15 +58,8 @@ public class RoadTrip {
         this.userId = userId;
     }
 
-    public RoadTrip(String name, String description, Integer userId) {
+    public RoadTrip(String name, Integer userId, String route, String days) {
         this.name = name;
-        this.description = description;
-        this.userId = userId;
-    }
-
-    public RoadTrip(String name, String description, Integer userId, String route, String days) {
-        this.name = name;
-        this.description = description;
         this.userId = userId;
         this.route = route;
         this.days = days;

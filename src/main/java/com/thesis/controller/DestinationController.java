@@ -28,27 +28,18 @@ public class DestinationController {
     private ModelMapper modelMapper;
 
 
-    //POST ENDPOINTS
     @PostMapping
     public ResponseEntity<DestinationSingleDTO> createDestination(@RequestBody Destination destination) {
-        Destination destinationToCreate = destination;
 
-        this.destinationRepository.save(destinationToCreate);
-
-        if(destinationToCreate.getActivities() != null) {
-            destinationToCreate.getActivities().forEach(x -> x.setDestination(destinationToCreate));
-            this.activityRepository.saveAll(destinationToCreate.getActivities());
-        }
+        this.destinationRepository.save(destination);
 
         return ResponseEntity
                 .status(HttpStatus.CREATED)
                 .body(new DestinationSingleDTO("success", modelMapper
-                        .map(destinationToCreate, DestinationDTO.class)
+                        .map(destination, DestinationDTO.class)
                 ));
     }
 
-
-    //GET ENDPOINTS
     @GetMapping
     public List<Destination> getAllDestinations() {
         return this.destinationRepository.findAll();
@@ -59,8 +50,6 @@ public class DestinationController {
         return this.destinationRepository.findById(id).orElseThrow();
     }
 
-
-    //UPDATE ENDPOINTS
     @PutMapping("/{id}")
     public ResponseEntity<Destination> updateDestination(@PathVariable Integer id, @RequestBody Destination destination) {
         Destination destinationToUpdate = this.destinationRepository.findById(id).orElseThrow( () -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Not Found"));
@@ -73,7 +62,6 @@ public class DestinationController {
     }
 
 
-    //DELETE ENDPOINTS
     @DeleteMapping("/{id}")
     public ResponseEntity<Destination> deleteDestination(@PathVariable Integer id) {
         Destination destinationToDelete = this.destinationRepository.findById(id).orElseThrow( () -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Not Found"));
