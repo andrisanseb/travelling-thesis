@@ -1,6 +1,7 @@
 package com.thesis.model.DTO;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -14,5 +15,6 @@ public class DestinationDTO {
     private BigDecimal longitude;
     private BigDecimal latitude;
     private String img_path;
-    private Integer countryId;
+    private CountryDTO country;
+    private List<ActivityDTO> activities;
 }

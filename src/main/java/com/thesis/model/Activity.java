@@ -1,11 +1,15 @@
 package com.thesis.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "activities")
@@ -30,13 +34,14 @@ public class Activity {
     private int cost;
 
     @Column(name = "duration")
-    private int duration;
+    private Integer duration;
 
     @ManyToOne
     @JoinColumn(name = "destination_id", nullable = false)
-    @JsonIgnoreProperties("destinations")
+    @JsonIgnoreProperties("activities")
     private Destination destination;
 
     @Column(name = "category")
     private String category;
+
 }

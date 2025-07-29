@@ -4,7 +4,9 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import java.math.BigDecimal;
+import java.util.List;
 
 @Entity
 @Table(name = "destinations")
@@ -27,8 +29,10 @@ public class Destination {
     @Column(name = "img_path")
     private String img_path;
 
-    @Column(name = "country_id")
-    private Integer countryId;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "country_id", nullable = false)
+    @JsonIgnoreProperties("countries")
+    private Country country;
 
     @Column
     private BigDecimal longitude;
@@ -36,33 +40,9 @@ public class Destination {
     @Column
     private BigDecimal latitude;
 
-    // Constructors
-    public Destination(String name, String description) {
-        this.name = name;
-        this.description = description;
-    }
-
-    public Destination(String name, String description, String img_path) {
-        this.name = name;
-        this.description = description;
-        this.img_path = img_path;
-    }
-
-    public Destination(String name, String description, Integer countryId, String img_path) {
-        this.name = name;
-        this.description = description;
-        this.countryId = countryId;
-        this.img_path = img_path;
-    }
-
-    public Destination(String name, String description, Integer countryId, String img_path, BigDecimal longitude, BigDecimal latitude) {
-        this.name = name;
-        this.description = description;
-        this.countryId = countryId;
-        this.img_path = img_path;
-        this.longitude = longitude;
-        this.latitude = latitude;
-    }
+    @OneToMany(mappedBy = "destination", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonIgnoreProperties("destination")
+    private List<Activity> activities;
 
     public Destination(int id) {
         this.id = id;

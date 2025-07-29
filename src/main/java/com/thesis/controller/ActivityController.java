@@ -25,9 +25,6 @@ public class ActivityController {
     @Autowired
     private ModelMapper modelMapper;
 
-
-    //ENDPOINTS
-
     //POST
     @PostMapping("destinations/{destination_id}/activities")
     public ResponseEntity<ActivitySingleDTO> createActivity(@RequestBody Activity activity, @PathVariable int destination_id) {
@@ -93,7 +90,6 @@ public class ActivityController {
         activityToUpdate.setName(activity.getName());
         activityToUpdate.setDescription(activity.getDescription());
         activityToUpdate.setCost(activity.getCost());
-//        activityToUpdate.setMinutes(activity.getMinutes());
 
         return new ResponseEntity<Activity>(this.activityRepository.save(activityToUpdate), HttpStatus.CREATED);
     }
