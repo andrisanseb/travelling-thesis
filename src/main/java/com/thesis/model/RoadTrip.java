@@ -47,21 +47,4 @@ public class RoadTrip {
     @Column(name = "user_id", nullable = false)
     private Integer userId;
 
-    // TODO: use @Builder for custom constructors
-    //Constructors
-    public RoadTrip(Integer id) {
-        this.id = id;
-    }
-
-    public RoadTrip(String name, Integer userId) {
-        this.name = name;
-        this.userId = userId;
-    }
-
-    public RoadTrip(String name, Integer userId, String route, String days) {
-        this.name = name;
-        this.userId = userId;
-        this.route = route;
-        this.days = days;
-    }
 }
