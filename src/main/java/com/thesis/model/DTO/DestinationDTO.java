@@ -12,8 +12,6 @@ public class DestinationDTO {
     private int id;
     private String name;
     private String description;
-    private BigDecimal longitude;
-    private BigDecimal latitude;
     private String img_path;
     private CountryDTO country;
     private List<ActivityDTO> activities;

@@ -34,12 +34,6 @@ public class Destination {
     @JsonIgnoreProperties("countries")
     private Country country;
 
-    @Column
-    private BigDecimal longitude;
-
-    @Column
-    private BigDecimal latitude;
-
     @OneToMany(mappedBy = "destination", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonIgnoreProperties("destination")
     private List<Activity> activities;

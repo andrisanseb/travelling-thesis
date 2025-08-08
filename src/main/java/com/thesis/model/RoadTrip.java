@@ -25,6 +25,9 @@ public class RoadTrip {
     @Column(name = "name")
     private String name;
 
+    @Column(name="details")
+    private String details;
+
     @Column(name="route")
     private String route;
 

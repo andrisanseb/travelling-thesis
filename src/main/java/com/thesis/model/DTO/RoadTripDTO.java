@@ -11,8 +11,9 @@ public class RoadTripDTO {
     private int id;
     private String name;
     private Integer userId;
-    private String route;
-    private String days;
+    private String details; // TODO: replaces route, day
+    private String route;   // TODO: Will be removed
+    private String days;    // TODO: Will be removed
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
 }

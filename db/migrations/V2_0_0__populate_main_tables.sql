@@ -1,32 +1,46 @@
--- TODO: maybe img_path is not needed, just check it in frontend
-
 -- Countries
-INSERT INTO countries (name, img_path)
+INSERT INTO countries (name)
 VALUES
-    ('Albania', 'albania.jpg'),
-    ('Bosnia and Herzegovina', 'bosnia.jpg'),
-    ('Bulgaria', 'bulgaria.jpg'),
-    ('Croatia', 'croatia.jpg'),
-    ('Greece', 'greece.jpg'),
-    ('Montenegro','montenegro.jpg'),
-    ('Serbia','serbia.jpg'),
-    ('Romania','romania.jpg');
+    ('Albania'),
+    ('Bosnia and Herzegovina'),
+    ('Bulgaria'),
+    ('Croatia'),
+    ('Greece'),
+    ('Montenegro'),
+    ('Serbia'),
+    ('Romania');
 
 
 -- Destinations
-INSERT INTO destinations (name, description, country_id, img_path, longitude, latitude)
+INSERT INTO destinations (name, description, country_id, img_path)
 VALUES
-    ('Tirana', 'Explore the vibrant heart of Albania, where history meets modern culture.', 1, 'tirana.jpg', 19.8187, 41.3275),
-    ('Sarajevo', 'Embark on a journey through the diverse culture and turbulent history of Bosnia and Herzegovina.', 2, 'sarajevo.jpg', 18.4131, 43.8563),
-    ('Sofia', 'Discover Bulgaria''s blend of ancient treasures and contemporary charm amidst its capital city.', 3, 'sofia.jpg', 23.3219, 42.6977),
-    ('Dubrovnik', 'Uncover the enchanting allure of Croatia''s coastal gem, where medieval walls guard timeless stories.', 4, 'dubrovnik.jpg', 18.0922, 42.6507),
-    ('Athens', 'Embark on an odyssey through Greece''s ancient past and vibrant present in its bustling capital.', 5, 'athens.jpg', 23.7275, 37.9838),
-    ('Kotor', 'Step into a fairy tale in Montenegro''s breathtaking coastal town, where history whispers through every stone.', 6, 'kotor.jpg', 18.7712, 42.4247),
-    ('Belgrade', 'Experience the pulse of Serbia as you navigate the dynamic blend of history, culture, and nightlife.', 7, 'belgrade.jpg', 20.4489, 44.7866),
-    ('Bucharest', 'Unravel the layers of Romania''s capital, where tradition and modernity converge in an eclectic tapestry.', 8, 'bucharest.jpg', 26.1025, 44.4268);
+    ('Tirana', 'Explore the vibrant heart of Albania, where history meets modern culture', 1, 'tirana.jpg'),
+    ('Himare', 'Relax on the stunning beaches of Himare, a coastal gem in southern Albania', 1, 'himare.jpg'),
+    ('Sarajevo', 'Embark on a journey through the diverse culture and turbulent history of Bosnia and Herzegovina', 2, 'sarajevo.jpg'),
+    ('Sofia', 'Discover Bulgaria''s blend of ancient treasures and contemporary charm amidst its capital city', 3, 'sofia.jpg'),
+    ('Dubrovnik', 'Uncover the enchanting allure of Croatia''s coastal gem, where medieval walls guard timeless stories', 4, 'dubrovnik.jpg'),
+    ('Athens', 'Embark on an odyssey through Greece''s ancient past and vibrant present in its bustling capital', 5, 'athens.jpg'),
+    ('Kotor', 'Step into a fairy tale in Montenegro''s breathtaking coastal town, where history whispers through every stone', 6, 'kotor.jpg'),
+    ('Belgrade', 'Experience the pulse of Serbia as you navigate the dynamic blend of history, culture, and nightlife', 7, 'belgrade.jpg'),
+    ('Bucharest', 'Unravel the layers of Romania''s capital, where tradition and modernity converge in an eclectic tapestry', 8, 'bucharest.jpg');
 
 
 -- Activities / Experiences / What To Do
+
+-- Activities for Himare, Albania
+INSERT INTO activities (name, description, cost, duration, destination_id, category)
+VALUES
+    ('Beach Day at Livadhi', 'Relax and swim at Livadhi Beach, known for its crystal-clear waters and scenic views.', 0, 240, 1, 'Nature'),
+    ('Kayaking Adventure', 'Explore the coastline of Himare by kayak and discover hidden coves.', 20, 120, 1, 'Leisure'),
+    ('Himare Castle Visit', 'Climb to Himare Castle for panoramic views and a glimpse into local history.', 5, 90, 1, 'Culture'),
+    ('Seafood Tasting Tour', 'Enjoy fresh seafood at Himare''s seaside restaurants.', 25, 90, 1, 'Gastronomy'),
+    ('Snorkeling Experience', 'Discover underwater life in the Ionian Sea with a guided snorkeling tour.', 15, 60, 1, 'Nature'),
+    ('Sunset Cruise', 'Take a boat cruise along the coast and watch the sunset over the Ionian Sea.', 30, 120, 1, 'Leisure'),
+    ('Olive Grove Walk', 'Stroll through ancient olive groves and learn about local olive oil production.', 0, 60, 1, 'Culture'),
+    ('Paragliding Over Himare', 'Experience breathtaking aerial views of Himare with a tandem paragliding flight.', 50, 45, 1, 'Leisure'),
+    ('Traditional Albanian Cooking Class', 'Join a local chef to learn and taste traditional Albanian dishes.', 20, 120, 1, 'Gastronomy'),
+    ('Visit to Porto Palermo Castle', 'Explore the historic Porto Palermo Castle, a short drive from Himare.', 10, 90, 1, 'Culture');
+
 -- Activities for Tirana, Albania
 INSERT INTO activities (name, description, cost, duration, destination_id, category)
 VALUES

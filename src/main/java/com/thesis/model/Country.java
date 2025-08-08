@@ -20,6 +20,4 @@ public class Country {
     @Column(name = "name", unique = true)
     private String name;
 
-    @Column(name = "img_path")
-    private String img_path;
 }

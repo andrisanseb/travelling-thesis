@@ -62,8 +62,6 @@ public class DestinationController {
         destination.setName(updated.getName());
         destination.setDescription(updated.getDescription());
         destination.setImg_path(updated.getImg_path());
-        destination.setLatitude(updated.getLatitude());
-        destination.setLongitude(updated.getLongitude());
         destination.setCountry(updated.getCountry());
 
         destinationRepository.save(destination);
