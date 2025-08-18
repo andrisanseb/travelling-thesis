@@ -2,7 +2,9 @@ package com.thesis.controller;
 
 import com.thesis.model.ActivityReview;
 import com.thesis.model.DTO.ActivityReviewDTO;
+import com.thesis.model.User;
 import com.thesis.repository.ActivityReviewRepository;
+import com.thesis.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -14,6 +16,9 @@ import java.util.List;
 public class ActivityReviewController {
 
     @Autowired
+    private UserRepository userRepository;
+
+    @Autowired
     private ActivityReviewRepository activityReviewRepository;
 
     @PostMapping
@@ -22,7 +27,11 @@ public class ActivityReviewController {
             return ResponseEntity.badRequest().body("Stars must not be null");
         }
 
-        ActivityReview review = new ActivityReview(dto.getUserId(), dto.getActivityId(), dto.getStars(), dto.getComment());
+        String username = userRepository.findById(dto.getUserId())
+                .map(User::getUsername)
+                .orElse(null);
+
+        ActivityReview review = new ActivityReview(dto.getUserId(), username, dto.getActivityId(), dto.getStars(), dto.getComment());
         activityReviewRepository.save(review);
         return ResponseEntity.ok("Review added successfully");
     }

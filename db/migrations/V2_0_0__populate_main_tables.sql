@@ -127,7 +127,6 @@ VALUES
     ('Romanian Wine Tasting Experience', 'Indulge in a tasting journey through Romania''s finest wines in the heart of Bucharest.', 20, 90, 8, 'Gastronomy'),
     ('Herastrau Park Relaxation', 'Unwind amidst the serene beauty of Herastrau Park with a leisurely stroll or picnic.', 0, 120, 8, 'Nature'),
     ('Bucharest Underground Tour', 'Descend into the hidden depths of Bucharest''s underground tunnels and uncover its secrets.', 10, 90, 8, 'Leisure'),
-    ('Metelkova Art Center Exploration', 'Immerse yourself in Ljubljana''s vibrant street art scene at the eclectic Metelkova Art Center.', 0, 120, 8, 'Leisure'),
     ('Cotroceni Palace Tour', 'Discover the opulent Cotroceni Palace, the official residence of the President of Romania, with a guided tour of its magnificent interiors and gardens.', 10, 90, 8, 'Culture'),
     ('Coffee Tasting at Old Town Cafés', 'Savor the rich flavors of Romanian coffee culture with a tasting tour of Bucharest''s historic cafés in the charming Old Town.', 15, 60, 8, 'Gastronomy'),
     ('Cișmigiu Gardens Boat Ride', 'Relax and enjoy a peaceful boat ride on the tranquil lake of Cișmigiu Gardens, one of Bucharest''s oldest and most picturesque parks.', 8, 90, 8, 'Leisure');

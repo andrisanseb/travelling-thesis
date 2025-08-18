@@ -23,6 +23,9 @@ public class ActivityReview {
     @Column(name = "user_id")
     private Integer userId;
 
+    @Column(name = "user_username")
+    private String userUsername;
+
     @Column(name = "activity_id")
     private Integer activityId;
 
@@ -45,6 +48,14 @@ public class ActivityReview {
 
     public ActivityReview(Integer userId, Integer activityId, Integer stars, String comment) {
         this.userId = userId;
+        this.activityId = activityId;
+        this.stars = stars;
+        this.comment = comment;
+    }
+
+    public ActivityReview(Integer userId, String userUsername, Integer activityId, Integer stars, String comment) {
+        this.userId = userId;
+        this.userUsername = userUsername;
         this.activityId = activityId;
         this.stars = stars;
         this.comment = comment;

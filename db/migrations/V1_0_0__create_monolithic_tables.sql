@@ -48,6 +48,7 @@ FOREIGN KEY (activity_id) REFERENCES activities(id) ON DELETE CASCADE
 create table if not exists activity_reviews (
 id serial primary key,
 user_id int,
+user_username text,
 activity_id int,
 stars int,
 comment text DEFAULT NULL,

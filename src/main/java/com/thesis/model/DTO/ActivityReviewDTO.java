@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class ActivityReviewDTO {
     private Integer userId;
+    private String username;
     private Integer activityId;
     private Integer stars;
     private String comment;
