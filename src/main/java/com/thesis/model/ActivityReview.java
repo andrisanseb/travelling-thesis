@@ -39,20 +39,6 @@ public class ActivityReview {
     @CreationTimestamp
     private LocalDateTime reviewedAt;
 
-    // Constructors
-    public ActivityReview(Integer userId, Integer activityId, Integer stars) {
-        this.userId = userId;
-        this.activityId = activityId;
-        this.stars = stars;
-    }
-
-    public ActivityReview(Integer userId, Integer activityId, Integer stars, String comment) {
-        this.userId = userId;
-        this.activityId = activityId;
-        this.stars = stars;
-        this.comment = comment;
-    }
-
     public ActivityReview(Integer userId, String userUsername, Integer activityId, Integer stars, String comment) {
         this.userId = userId;
         this.userUsername = userUsername;

@@ -15,6 +15,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @RestController
+@RequestMapping("activities")
 public class ActivityController {
 
     private record ActivitySingleDTO (String status, ActivityDTO data) {}
@@ -25,82 +26,85 @@ public class ActivityController {
     @Autowired
     private ModelMapper modelMapper;
 
-    //POST
-    @PostMapping("destinations/{destination_id}/activities")
-    public ResponseEntity<ActivitySingleDTO> createActivity(@RequestBody Activity activity, @PathVariable int destination_id) {
+    @PostMapping
+    public ResponseEntity<ActivitySingleDTO> createActivity(@RequestBody ActivityDTO dto) {
+        Activity activity = new Activity(
+                dto.getName(),
+                dto.getDescription(),
+                dto.getCost(),
+                dto.getDuration(),
+                new Destination(dto.getDestinationId()),
+                dto.getCategory(),
+                dto.getCreatedByUserId()
+        );
 
-        Activity activityToCreate = activity;
-        activityToCreate.setDestination(new Destination(destination_id));
-
-        return ResponseEntity
-                .status(HttpStatus.CREATED)
-                .body(new ActivitySingleDTO("success", modelMapper
-                        .map(this.activityRepository.save(activityToCreate), ActivityDTO.class)
-                ));
-
+        Activity savedActivity = activityRepository.save(activity);
+        ActivityDTO activityDTO = modelMapper.map(savedActivity, ActivityDTO.class);
+        return ResponseEntity.status(HttpStatus.CREATED)
+                .body(new ActivitySingleDTO("success", activityDTO));
     }
 
-    //GET
-    @GetMapping("destinations/{destination_id}/activities")
+    // GET /activities/destinations/{destination_id}
+    @GetMapping("/destinations/{destination_id}")
     public ResponseEntity<ActivityListDTO> getAllActivitiesOfThisDestination(@PathVariable int destination_id) {
-        return ResponseEntity
-                .ok(new ActivityListDTO("success", this.activityRepository.findAll().stream().filter(x -> x.getDestination().getId() == destination_id)
-                        .map(x -> modelMapper
-                                .map(x, ActivityDTO.class))
-                        .collect(Collectors.toList())
-                ));
+        List<ActivityDTO> activities = activityRepository.findAll().stream()
+                .filter(x -> x.getDestination().getId() == destination_id)
+                .map(x -> modelMapper.map(x, ActivityDTO.class))
+                .collect(Collectors.toList());
+        return ResponseEntity.ok(new ActivityListDTO("success", activities));
     }
 
-    @GetMapping("activities")
+    // GET /activities
+    @GetMapping
     public ResponseEntity<ActivityListDTO> getAllActivities() {
-        return ResponseEntity
-                .ok(new ActivityListDTO("success", this.activityRepository.findAll().stream()
-                        .map(x -> modelMapper
-                                .map(x, ActivityDTO.class))
-                        .collect(Collectors.toList())
-                ));
+        List<ActivityDTO> activities = activityRepository.findAll().stream()
+                .map(x -> modelMapper.map(x, ActivityDTO.class))
+                .collect(Collectors.toList());
+        return ResponseEntity.ok(new ActivityListDTO("success", activities));
     }
 
-    @GetMapping("activities/free")
-    public ResponseEntity<ActivityListDTO> getAllFreeActivities() {
-        return ResponseEntity
-                .ok(new ActivityListDTO("success", this.activityRepository.findAll().stream().filter(x -> x.getCost() == 0)
-                        .map(x -> modelMapper
-                                .map(x, ActivityDTO.class))
-                        .collect(Collectors.toList())
-                ));
+    @GetMapping("/user/{id}")
+    public ResponseEntity<ActivityListDTO> getActivitiesByUserId(@PathVariable Integer id) {
+        List<ActivityDTO> activities = activityRepository.findAll().stream()
+                .filter(x -> id.equals(x.getCreatedByUserId()))
+                .map(x -> modelMapper.map(x, ActivityDTO.class))
+                .collect(Collectors.toList());
+        return ResponseEntity.ok(new ActivityListDTO("success", activities));
     }
 
-    @GetMapping("activities/{id}")
+    // GET /activities/{id}
+    @GetMapping("/{id}")
     public ResponseEntity<ActivitySingleDTO> getActivityById(@PathVariable int id) {
-        return ResponseEntity
-                .ok(new ActivitySingleDTO("success", this.activityRepository.findById(id)
-                        .map(x -> modelMapper
-                                .map(x, ActivityDTO.class)).orElseThrow()
-                ));
+        Activity activity = activityRepository.findById(id)
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Not Found"));
+        ActivityDTO activityDTO = modelMapper.map(activity, ActivityDTO.class);
+        return ResponseEntity.ok(new ActivitySingleDTO("success", activityDTO));
     }
 
+    // PUT /activities/{id}
+    @PutMapping("/{id}")
+    public ResponseEntity<Activity> updateActivityById(@PathVariable Integer id, @RequestBody ActivityDTO dto) {
+        Activity activityToUpdate = activityRepository.findById(id)
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Not Found"));
 
+        activityToUpdate.setName(dto.getName());
+        activityToUpdate.setDescription(dto.getDescription());
+        activityToUpdate.setCost(dto.getCost());
+        activityToUpdate.setDuration(dto.getDuration());
+        if (dto.getDestinationId() != null) {
+            activityToUpdate.setDestination(new Destination(dto.getDestinationId()));
+        }
+        activityToUpdate.setCategory(dto.getCategory());
 
-    //UPDATE
-    @PutMapping("activities/{id}")
-    public ResponseEntity<Activity> updateActivityById(@PathVariable Integer id, @RequestBody Activity activity) {
-        Activity activityToUpdate = this.activityRepository.findById(id).orElseThrow( () -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Not Found"));
-
-        activityToUpdate.setName(activity.getName());
-        activityToUpdate.setDescription(activity.getDescription());
-        activityToUpdate.setCost(activity.getCost());
-
-        return new ResponseEntity<Activity>(this.activityRepository.save(activityToUpdate), HttpStatus.CREATED);
+        return new ResponseEntity<>(activityRepository.save(activityToUpdate), HttpStatus.CREATED);
     }
 
-
-    //DELETE
-    @DeleteMapping("activities/{id}")
+    // DELETE /activities/{id}
+    @DeleteMapping("/{id}")
     public ResponseEntity<Activity> deleteActivityById(@PathVariable Integer id) {
-        Activity activityToDelete = this.activityRepository.findById(id).orElseThrow( () -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Not Found"));
-        this.activityRepository.delete(activityToDelete);
+        Activity activityToDelete = activityRepository.findById(id)
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Not Found"));
+        activityRepository.delete(activityToDelete);
         return ResponseEntity.ok(activityToDelete);
     }
-
 }
