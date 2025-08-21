@@ -1,7 +1,5 @@
 package com.thesis.services;
 
-
-
 import com.thesis.model.User;
 import com.thesis.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,7 +7,6 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.stereotype.Service;
-
 
 @Service
 public class UserDetailsServiceImpl implements UserDetailsService {
@@ -24,10 +21,6 @@ public class UserDetailsServiceImpl implements UserDetailsService {
             throw new UsernameNotFoundException("User not found with username: " + username);
         }
 
-//        return new org.springframework.security.core.userdetails.User(
-//                user.getUsername(),
-//                user.getPassword(),
-//                Collections.emptyList()
         return UserDetailsImpl.build(user);
     }
 }
