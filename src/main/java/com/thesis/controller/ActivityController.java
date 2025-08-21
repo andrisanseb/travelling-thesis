@@ -35,7 +35,8 @@ public class ActivityController {
                 dto.getDuration(),
                 new Destination(dto.getDestinationId()),
                 dto.getCategory(),
-                dto.getCreatedByUserId()
+                dto.getCreatedByUserId(),
+                dto.getCreatedByUsername()
         );
 
         Activity savedActivity = activityRepository.save(activity);

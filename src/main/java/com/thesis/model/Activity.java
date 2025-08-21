@@ -46,12 +46,15 @@ public class Activity {
     @Column(name = "created_by_user_id")
     private Integer createdByUserId;
 
+    @Column(name = "created_by_username")
+    private String createdByUsername;
+
     @Column(name="created_at")
     @CreationTimestamp
     private LocalDateTime createdAt;
 
     // Constructor with all fields except createdAt
-    public Activity(String name, String description, int cost, Integer duration, Destination destination, String category, Integer createdByUserId) {
+    public Activity(String name, String description, int cost, Integer duration, Destination destination, String category, Integer createdByUserId, String createdByUsername) {
         this.name = name;
         this.description = description;
         this.cost = cost;
@@ -59,14 +62,7 @@ public class Activity {
         this.destination = destination;
         this.category = category;
         this.createdByUserId = createdByUserId;
-    }
-
-    // Constructor with only required fields
-    public Activity(String name, String description, int cost, Destination destination) {
-        this.name = name;
-        this.description = description;
-        this.cost = cost;
-        this.destination = destination;
+        this.createdByUsername = createdByUsername;
     }
 
 }

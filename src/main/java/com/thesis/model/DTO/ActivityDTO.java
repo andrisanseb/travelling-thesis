@@ -16,5 +16,6 @@ public class ActivityDTO {
     private Integer duration;
     private Integer destinationId;
     private Integer createdByUserId;
+    private String createdByUsername;
     private LocalDateTime createdAt;
 }
