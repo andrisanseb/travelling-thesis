@@ -14,119 +14,141 @@ VALUES
 -- Destinations
 INSERT INTO destinations (name, description, country_id, img_path)
 VALUES
-    ('Tirana', 'Explore the vibrant heart of Albania, where history meets modern culture', 1, 'tirana.jpg'),
-    ('Himare', 'Relax on the stunning beaches of Himare, a coastal gem in southern Albania', 1, 'himare.jpg'),
-    ('Sarajevo', 'Embark on a journey through the diverse culture and turbulent history of Bosnia and Herzegovina', 2, 'sarajevo.jpg'),
-    ('Sofia', 'Discover Bulgaria''s blend of ancient treasures and contemporary charm amidst its capital city', 3, 'sofia.jpg'),
-    ('Dubrovnik', 'Uncover the enchanting allure of Croatia''s coastal gem, where medieval walls guard timeless stories', 4, 'dubrovnik.jpg'),
-    ('Athens', 'Embark on an odyssey through Greece''s ancient past and vibrant present in its bustling capital', 5, 'athens.jpg'),
-    ('Kotor', 'Step into a fairy tale in Montenegro''s breathtaking coastal town, where history whispers through every stone', 6, 'kotor.jpg'),
-    ('Belgrade', 'Experience the pulse of Serbia as you navigate the dynamic blend of history, culture, and nightlife', 7, 'belgrade.jpg'),
-    ('Bucharest', 'Unravel the layers of Romania''s capital, where tradition and modernity converge in an eclectic tapestry', 8, 'bucharest.jpg');
+    ('Tirana', 'Explore the vibrant capital of Albania, where colorful architecture, lively markets, and rich history come together in a dynamic urban experience.', 1, 'tirana.jpg'), -- 1
+    ('Himare', 'Relax on the stunning beaches of Himare, a coastal gem in southern Albania known for its crystal-clear waters and laid-back atmosphere.', 1, 'himare.jpg'), -- 2
+    ('Sarajevo', 'Experience the unique blend of East and West in Sarajevo, a city shaped by diverse cultures and a deeply layered history.', 2, 'sarajevo.jpg'), -- 3
+    ('Sofia', 'Discover Bulgaria''s capital, where ancient ruins, historic churches, and modern city life coexist beautifully.', 3, 'sofia.jpg'), -- 4
+    ('Dubrovnik', 'Step into a medieval masterpiece in Dubrovnik, where ancient walls and Adriatic views create an unforgettable experience.', 4, 'dubrovnik.jpg'), -- 5
+    ('Athens', 'Explore the cradle of Western civilization in Athens, where iconic landmarks meet vibrant modern culture.', 5, 'athens.jpg'), -- 6
+    ('Kotor', 'Wander through Montenegro''s fairy-tale coastal town, surrounded by mountains and filled with medieval charm.', 6, 'kotor.jpg'), -- 7
+    ('Belgrade', 'Dive into Belgrade''s energetic spirit, with its mix of history, nightlife, and riverside culture.', 7, 'belgrade.jpg'), -- 8
+    ('Bucharest', 'Explore Romania’s eclectic capital, a city of contrasts blending grand architecture, history, and modern vibes.', 8, 'bucharest.jpg'), -- 9
+    ('Suceava', 'Discover Suceava, a picturesque region in northern Romania renowned for its UNESCO-listed painted monasteries, rolling hills, dense forests, and authentic rural traditions that offer a glimpse into a timeless way of life.', 8, 'suceava.jpg'); -- 10
 
 
 -- Activities / Experiences / What To Do
 
--- Activities for Himare, Albania
-INSERT INTO activities (name, description, cost, duration, destination_id, category)
-VALUES
-    ('Beach Day at Livadhi', 'Relax and swim at Livadhi Beach, known for its crystal-clear waters and scenic views.', 0, 240, 1, 'Nature'),
-    ('Kayaking Adventure', 'Explore the coastline of Himare by kayak and discover hidden coves.', 20, 120, 1, 'Leisure'),
-    ('Himare Castle Visit', 'Climb to Himare Castle for panoramic views and a glimpse into local history.', 5, 90, 1, 'Culture'),
-    ('Seafood Tasting Tour', 'Enjoy fresh seafood at Himare''s seaside restaurants.', 25, 90, 1, 'Gastronomy'),
-    ('Snorkeling Experience', 'Discover underwater life in the Ionian Sea with a guided snorkeling tour.', 15, 60, 1, 'Nature'),
-    ('Sunset Cruise', 'Take a boat cruise along the coast and watch the sunset over the Ionian Sea.', 30, 120, 1, 'Leisure'),
-    ('Olive Grove Walk', 'Stroll through ancient olive groves and learn about local olive oil production.', 0, 60, 1, 'Culture'),
-    ('Paragliding Over Himare', 'Experience breathtaking aerial views of Himare with a tandem paragliding flight.', 50, 45, 1, 'Leisure'),
-    ('Traditional Albanian Cooking Class', 'Join a local chef to learn and taste traditional Albanian dishes.', 20, 120, 1, 'Gastronomy'),
-    ('Visit to Porto Palermo Castle', 'Explore the historic Porto Palermo Castle, a short drive from Himare.', 10, 90, 1, 'Culture');
-
--- Activities for Tirana, Albania
+-- Activities for Tirana (destination_id = 1)
 INSERT INTO activities (name, description, cost, duration, destination_id, category)
 VALUES
     ('Skanderbeg Square Exploration', 'Discover the historic Skanderbeg Square and its surrounding landmarks.', 0, 90, 1, 'Culture'),
     ('Traditional Albanian Food Tour', 'Indulge in a culinary adventure through Tirana''s authentic Albanian cuisine.', 15, 120, 1, 'Gastronomy'),
     ('Mount Dajti Cable Car Ride', 'Ascend to breathtaking heights and enjoy panoramic views from Mount Dajti.', 10, 60, 1, 'Nature'),
-    ('Local Handicrafts Workshop', 'Immerse yourself in Tirana''s artisan culture with a hands-on crafting experience.', 90, 20, 1, 'Leisure'),
-    ('BunkArt 2 Museum Visit', 'Explore Tirana''s fascinating history with a visit to the BunkArt 2 museum, housed in a former nuclear bunker.', 5, 90, 1, 'Culture'),
-    ('Lake Bovilla Picnic', 'Escape the city and enjoy a scenic picnic by the tranquil shores of Lake Bovilla, just outside Tirana.', 10, 120, 1, 'Nature'),
-    ('Tirana Bike Tour', 'Discover Tirana''s hidden gems and vibrant neighborhoods on a guided bike tour through the city.', 15, 180, 1, 'Leisure');
+    ('Local Handicrafts Workshop', 'Immerse yourself in Tirana''s artisan culture with a hands-on crafting experience.', 20, 90, 1, 'Leisure'),
+    ('BunkArt 2 Museum Visit', 'Explore Tirana''s history with a visit to the BunkArt 2 museum.', 5, 90, 1, 'Culture'),
+    ('Lake Bovilla Picnic', 'Enjoy a scenic picnic by Lake Bovilla.', 10, 120, 1, 'Nature'),
+    ('Tirana Bike Tour', 'Discover Tirana''s neighborhoods on a guided bike tour.', 15, 180, 1, 'Leisure');
 
--- Activities for Sarajevo, Bosnia and Herzegovina
+
+-- Activities for Himare (destination_id = 2)
 INSERT INTO activities (name, description, cost, duration, destination_id, category)
 VALUES
-    ('Old Town Walking Tour', 'Explore the cobblestone streets of Sarajevo''s Old Town and learn about its rich history.', 0, 120, 2, 'Culture'),
-    ('Bosnian Cuisine Cooking Class', 'Learn the secrets of traditional Bosnian cooking in a local chef''s kitchen.', 25, 180, 2, 'Gastronomy'),
-    ('Sarajevo War Tunnel Museum Visit', 'Journey back in time and discover the poignant history of the Sarajevo War Tunnel.', 5, 90, 2, 'Nature'),
-    ('River Rafting Adventure', 'Embark on an adrenaline-pumping rafting excursion down the wild rivers of Bosnia.', 30, 180, 2, 'Leisure'),
-    ('Latin Bridge Walking Tour', 'Stroll across the historic Latin Bridge, known for its role in the events leading to the start of World War I.', 0, 60, 2, 'Culture'),
-    ('Sarajevo Brewery Tour', 'Sample a variety of locally brewed beers on a guided tour of Sarajevo''s renowned breweries.', 20, 90, 2, 'Gastronomy'),
-    ('Trebević Mountain Hike', 'Embark on a scenic hike to the summit of Trebević Mountain for panoramic views of Sarajevo.', 0, 240, 2, 'Nature');
+    ('Beach Day at Livadhi', 'Relax and swim at Livadhi Beach.', 0, 240, 2, 'Nature'),
+    ('Kayaking Adventure', 'Explore the coastline by kayak.', 20, 120, 2, 'Leisure'),
+    ('Himare Castle Visit', 'Climb to Himare Castle.', 5, 90, 2, 'Culture'),
+    ('Seafood Tasting Tour', 'Enjoy fresh seafood.', 25, 90, 2, 'Gastronomy'),
+    ('Snorkeling Experience', 'Discover underwater life.', 15, 60, 2, 'Nature'),
+    ('Sunset Cruise', 'Watch the sunset at sea.', 30, 120, 2, 'Leisure'),
+    ('Olive Grove Walk', 'Walk through olive groves.', 0, 60, 2, 'Culture'),
+    ('Paragliding Over Himare', 'Enjoy aerial views.', 50, 45, 2, 'Leisure'),
+    ('Traditional Albanian Cooking Class', 'Cook local dishes.', 20, 120, 2, 'Gastronomy'),
+    ('Visit to Porto Palermo Castle', 'Explore the historic castle.', 10, 90, 2, 'Culture');
 
 
--- Activities for Sofia, Bulgaria
+-- Activities for Sarajevo (destination_id = 3)
 INSERT INTO activities (name, description, cost, duration, destination_id, category)
 VALUES
-    ('National History Museum Tour', 'Uncover Bulgaria''s fascinating past with a guided tour of the National History Museum.', 8, 90, 3, 'Culture'),
-    ('Bulgarian Wine Tasting Experience', 'Savor the flavors of Bulgaria with a tasting journey through its renowned wineries.', 20, 120, 3, 'Gastronomy'),
-    ('Vitosha Mountain Hike', 'Embark on a scenic trek through the stunning landscapes of Vitosha Mountain.', 0, 180, 3, 'Nature'),
-    ('Sofia Pub Crawl', 'Experience Sofia''s vibrant nightlife with a guided pub crawl through the city''s top bars.', 15, 240, 3,'Leisure'),
-    ('Alexander Nevsky Cathedral Visit', 'Marvel at the stunning architecture of the Alexander Nevsky Cathedral, an iconic symbol of Sofia.', 0, 60, 3, 'Religion'),
-    ('Street Food Tour', 'Embark on a gastronomic adventure through Sofia''s bustling streets, sampling a variety of local delicacies.', 15, 120, 3, 'Gastronomy'),
-    ('Botanical Garden Relaxation', 'Escape the urban hustle and unwind amidst the lush greenery of Sofia''s Botanical Garden.', 5, 90, 3, 'Nature');
+    ('Old Town Walking Tour', 'Explore Sarajevo''s Old Town.', 0, 120, 3, 'Culture'),
+    ('Bosnian Cooking Class', 'Learn Bosnian cuisine.', 25, 180, 3, 'Gastronomy'),
+    ('War Tunnel Museum Visit', 'Learn about wartime history.', 5, 90, 3, 'Culture'),
+    ('River Rafting Adventure', 'Experience rafting.', 30, 180, 3, 'Leisure'),
+    ('Latin Bridge Walk', 'Visit historic bridge.', 0, 60, 3, 'Culture'),
+    ('Sarajevo Brewery Tour', 'Taste local beers.', 20, 90, 3, 'Gastronomy'),
+    ('Trebević Mountain Hike', 'Hike for panoramic views.', 0, 240, 3, 'Nature');
 
 
--- Activities for Dubrovnik, Croatia
+-- Activities for Sofia (destination_id = 4)
 INSERT INTO activities (name, description, cost, duration, destination_id, category)
 VALUES
-    ('Dubrovnik City Walls Tour', 'Walk along the ancient city walls of Dubrovnik and marvel at panoramic views.', 15, 120, 4, 'Culture'),
-    ('Seafood Tasting Cruise', 'Embark on a gastronomic journey aboard a luxury yacht with a seafood tasting experience.', 50, 180, 4, 'Gastronomy'),
-    ('Lokrum Island Nature Walk', 'Explore the natural beauty of Lokrum Island with a guided nature walk.', 10, 90, 4, 'Nature'),
-    ('Game of Thrones Filming Locations Tour', 'Step into the world of Westeros with a guided tour of Dubrovnik''s Game of Thrones filming locations.', 25, 180, 4, 'Leisure'),
-    ('Rector''s Palace Guided Tour', 'Step back in time with a guided tour of the Rector''s Palace, a well-preserved medieval landmark in Dubrovnik.', 10, 90, 4, 'Culture'),
-    ('Wine Tasting at Pelješac Peninsula', 'Indulge in a wine tasting experience at the scenic Pelješac Peninsula, renowned for its vineyards and wineries.', 30, 180, 4, 'Gastronomy'),
-    ('Banje Beach Relaxation', 'Soak up the sun and enjoy a relaxing day at Banje Beach, one of Dubrovnik''s most popular seaside spots.', 0, 180, 4, 'Leisure');
+    ('National History Museum Tour', 'Explore Bulgaria''s history.', 8, 90, 4, 'Culture'),
+    ('Wine Tasting Experience', 'Taste Bulgarian wines.', 20, 120, 4, 'Gastronomy'),
+    ('Vitosha Mountain Hike', 'Hike scenic trails.', 0, 180, 4, 'Nature'),
+    ('Sofia Pub Crawl', 'Enjoy nightlife.', 15, 240, 4, 'Leisure'),
+    ('Alexander Nevsky Cathedral Visit', 'Visit iconic cathedral.', 0, 60, 4, 'Religion'),
+    ('Street Food Tour', 'Taste local food.', 15, 120, 4, 'Gastronomy'),
+    ('Botanical Garden Relaxation', 'Relax in nature.', 5, 90, 4, 'Nature');
 
--- Activities for Athens, Greece
+
+-- Activities for Dubrovnik (destination_id = 5)
 INSERT INTO activities (name, description, cost, duration, destination_id, category)
 VALUES
-    ('Acropolis Guided Tour', 'Embark on a journey through ancient history with a guided tour of the Acropolis.', 20, 120, 5, 'Culture'),
-    ('Greek Cooking Class', 'Learn the art of Greek cuisine from a local chef and savor the flavors of Greece.', 30, 180, 5, 'Gastronomy'),
-    ('Mount Lycabettus Sunset Hike', 'Hike to the summit of Mount Lycabettus and witness a breathtaking sunset over Athens.', 0, 90, 5, 'Nature'),
-    ('Athens Night Bike Tour', 'Experience Athens by night with a thrilling bike tour through its illuminated streets.', 25, 180, 5, 'Leisure'),
-    ('Ancient Agora Exploration', 'Explore the ruins of the Ancient Agora, a central gathering place in ancient Athens steeped in history and mythology.', 5, 120, 5, 'Culture'),
-    ('Olive Oil Tasting Experience', 'Learn about Greece''s rich olive oil tradition and sample a variety of premium olive oils at a local tasting.', 5, 60, 5, 'Gastronomy'),
-    ('National Garden Picnic', 'Escape the urban bustle and enjoy a leisurely picnic amidst the lush greenery of Athens'' National Garden.', 5, 90, 5, 'Nature');
+    ('City Walls Tour', 'Walk Dubrovnik''s walls.', 15, 120, 5, 'Culture'),
+    ('Seafood Cruise', 'Seafood tasting at sea.', 50, 180, 5, 'Gastronomy'),
+    ('Lokrum Island Walk', 'Explore island nature.', 10, 90, 5, 'Nature'),
+    ('Game of Thrones Tour', 'Visit filming locations.', 25, 180, 5, 'Leisure'),
+    ('Rector''s Palace Tour', 'Visit historic palace.', 10, 90, 5, 'Culture'),
+    ('Wine Tasting', 'Taste regional wines.', 30, 180, 5, 'Gastronomy'),
+    ('Banje Beach Relaxation', 'Relax at the beach.', 0, 180, 5, 'Leisure');
 
--- Activities for Kotor, Montenegro
+
+-- Activities for Athens (destination_id = 6)
 INSERT INTO activities (name, description, cost, duration, destination_id, category)
 VALUES
-    ('Kotor Old Town Guided Walk', 'Discover the medieval charm of Kotor''s Old Town with a knowledgeable local guide.', 0, 120, 6, 'Culture'),
-    ('Bay of Kotor Boat Tour', 'Cruise along the stunning Bay of Kotor and visit picturesque coastal villages.', 35, 180, 6, 'Gastronomy'),
-    ('Lovćen National Park Hike', 'Embark on a scenic hike through the rugged landscapes of Lovćen National Park.', 0, 180, 6, 'Nature'),
-    ('Kotor Fortress Climb', 'Climb the ancient walls of Kotor Fortress and enjoy panoramic views of the bay.', 10, 90, 6, 'Leisure'),
-    ('Church of Our Lady of Remedy Visit', 'Visit the historic Church of Our Lady of Remedy, perched on a hill overlooking the Bay of Kotor.', 0, 30, 6, 'Religion'),
-    ('Bay of Kotor Kayaking Adventure', 'Paddle through the crystal-clear waters of the Bay of Kotor on an exciting kayaking excursion.', 25, 120, 6, 'Leisure'),
-    ('Perast Boat Tour', 'Cruise to the charming town of Perast and explore its historic landmarks and picturesque waterfront.', 40, 180, 6, 'Leisure');
+    ('Acropolis Tour', 'Explore the Acropolis.', 20, 120, 6, 'Culture'),
+    ('Greek Cooking Class', 'Learn Greek cooking.', 30, 180, 6, 'Gastronomy'),
+    ('Lycabettus Sunset Hike', 'Watch sunset from hill.', 0, 90, 6, 'Nature'),
+    ('Night Bike Tour', 'Bike through Athens at night.', 25, 180, 6, 'Leisure'),
+    ('Ancient Agora Visit', 'Visit historic site.', 5, 120, 6, 'Culture'),
+    ('Olive Oil Tasting', 'Taste olive oils.', 5, 60, 6, 'Gastronomy'),
+    ('National Garden Picnic', 'Relax in garden.', 5, 90, 6, 'Nature');
 
--- Activities for Belgrade, Serbia
+
+-- Activities for Kotor (destination_id = 7)
 INSERT INTO activities (name, description, cost, duration, destination_id, category)
 VALUES
-    ('Belgrade Fortress Tour', 'Explore the historic Belgrade Fortress and learn about its significance throughout the centuries.', 0, 120, 7, 'Culture'),
-    ('Serbian Cuisine Food Tour', 'Satisfy your taste buds with a culinary journey through Belgrade''s diverse flavors.', 20, 180, 7, 'Gastronomy'),
-    ('Danube River Cruise', 'Relax and unwind on a leisurely cruise along the Danube River with stunning city views.', 30, 180, 7, 'Nature'),
-    ('Belgrade Street Art Walk', 'Discover Belgrade''s vibrant street art scene with a guided walking tour through its colorful neighborhoods.', 0, 90, 7, 'Leisure'),
-    ('Saint Sava Temple Visit', 'Visit the magnificent Saint Sava Temple, one of the largest Orthodox churches in the world, and admire its stunning architecture.', 0, 60, 7, 'Religion'),
-    ('Skadarlija Bohemian Quarter Tour', 'Stroll through the cobbled streets of Skadarlija, Belgrade''s bohemian quarter, known for its lively atmosphere and traditional taverns.', 10, 90, 7, 'Culture'),
-    ('Ada Ciganlija Recreation', 'Escape the city heat and enjoy a day of swimming, sunbathing, and recreational activities at Ada Ciganlija, Belgrade''s popular river island.', 5, 240, 7, 'Leisure');
+    ('Old Town Walk', 'Explore medieval town.', 0, 120, 7, 'Culture'),
+    ('Boat Tour', 'Cruise the bay.', 35, 180, 7, 'Leisure'),
+    ('Lovćen Hike', 'Hike mountains.', 0, 180, 7, 'Nature'),
+    ('Fortress Climb', 'Climb for views.', 10, 90, 7, 'Leisure'),
+    ('Church Visit', 'Visit historic church.', 0, 30, 7, 'Religion'),
+    ('Kayaking', 'Paddle the bay.', 25, 120, 7, 'Leisure'),
+    ('Perast Tour', 'Visit nearby town.', 40, 180, 7, 'Leisure');
 
--- Activities for Bucharest, Romania
+
+-- Activities for Belgrade (destination_id = 8)
 INSERT INTO activities (name, description, cost, duration, destination_id, category)
 VALUES
-    ('Palace of the Parliament Tour', 'Explore one of the world''s largest administrative buildings with a guided tour of the Palace of the Parliament.', 15, 120, 8, 'Culture'),
-    ('Romanian Wine Tasting Experience', 'Indulge in a tasting journey through Romania''s finest wines in the heart of Bucharest.', 20, 90, 8, 'Gastronomy'),
-    ('Herastrau Park Relaxation', 'Unwind amidst the serene beauty of Herastrau Park with a leisurely stroll or picnic.', 0, 120, 8, 'Nature'),
-    ('Bucharest Underground Tour', 'Descend into the hidden depths of Bucharest''s underground tunnels and uncover its secrets.', 10, 90, 8, 'Leisure'),
-    ('Cotroceni Palace Tour', 'Discover the opulent Cotroceni Palace, the official residence of the President of Romania, with a guided tour of its magnificent interiors and gardens.', 10, 90, 8, 'Culture'),
-    ('Coffee Tasting at Old Town Cafés', 'Savor the rich flavors of Romanian coffee culture with a tasting tour of Bucharest''s historic cafés in the charming Old Town.', 15, 60, 8, 'Gastronomy'),
-    ('Cișmigiu Gardens Boat Ride', 'Relax and enjoy a peaceful boat ride on the tranquil lake of Cișmigiu Gardens, one of Bucharest''s oldest and most picturesque parks.', 8, 90, 8, 'Leisure');
+    ('Fortress Tour', 'Explore Belgrade Fortress.', 0, 120, 8, 'Culture'),
+    ('Food Tour', 'Taste Serbian cuisine.', 20, 180, 8, 'Gastronomy'),
+    ('Danube Cruise', 'Cruise the river.', 30, 180, 8, 'Nature'),
+    ('Street Art Walk', 'See urban art.', 0, 90, 8, 'Leisure'),
+    ('Saint Sava Temple', 'Visit temple.', 0, 60, 8, 'Religion'),
+    ('Skadarlija Walk', 'Explore bohemian quarter.', 10, 90, 8, 'Culture'),
+    ('Ada Ciganlija', 'Relax on river island.', 5, 240, 8, 'Leisure');
+
+
+-- Activities for Bucharest (destination_id = 9)
+INSERT INTO activities (name, description, cost, duration, destination_id, category)
+VALUES
+    ('Parliament Tour', 'Visit massive building.', 15, 120, 9, 'Culture'),
+    ('Wine Tasting', 'Taste Romanian wines.', 20, 90, 9, 'Gastronomy'),
+    ('Herastrau Park', 'Relax in park.', 0, 120, 9, 'Nature'),
+    ('Underground Tour', 'Explore tunnels.', 10, 90, 9, 'Leisure'),
+    ('Cotroceni Palace', 'Visit presidential palace.', 10, 90, 9, 'Culture'),
+    ('Coffee Tour', 'Taste local coffee.', 15, 60, 9, 'Gastronomy'),
+    ('Cismigiu Gardens Boat Ride', 'Boat ride in park.', 8, 90, 9, 'Leisure');
+
+
+-- Activities for Suceava (destination_id = 10)
+INSERT INTO activities (name, description, cost, duration, destination_id, category)
+VALUES
+    ('Painted Monasteries Tour', 'Visit UNESCO monasteries.', 20, 240, 10, 'Culture'),
+    ('Voronet Monastery Visit', 'See famous blue fresco.', 5, 90, 10, 'Religion'),
+    ('Village Walk', 'Explore rural life.', 0, 120, 10, 'Culture'),
+    ('Egg Painting Workshop', 'Learn traditional craft.', 15, 120, 10, 'Culture'),
+    ('Rarau Mountains Hike', 'Hike scenic mountains.', 0, 240, 10, 'Nature'),
+    ('Cheese & Wine Tasting', 'Taste local products.', 20, 90, 10, 'Gastronomy'),
+    ('Carriage Ride', 'Ride through countryside.', 15, 60, 10, 'Leisure'),
+    ('Suceava Fortress Tour', 'Visit medieval fortress.', 10, 90, 10, 'Culture'),
+    ('Forest Foraging', 'Gather wild food.', 10, 120, 10, 'Nature'),
+    ('Traditional Cooking', 'Cook local dishes.', 25, 150, 10, 'Gastronomy');
