@@ -47,3 +47,4 @@ src/main/resources/application.yml
 report.html
 report.json
 notes/commands.txt
+src/main/resources/application.properties
